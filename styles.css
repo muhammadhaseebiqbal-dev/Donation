@@ -1517,6 +1517,236 @@ body.scrolled .quick-donate-bar {
     background: #007a67;
 }
 
+/* Mobile Quick Donate - Hidden on Desktop */
+.quick-donate-mobile {
+    display: none;
+}
+
+/* Desktop Quick Donate Visibility */
+.quick-donate-desktop {
+    display: block;
+}
+
+/* Mobile Quick Donate Styles */
+.mobile-donate-container {
+    background: white;
+    padding: 30px 20px;
+    max-width: 100%;
+}
+
+.mobile-donate-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mobile-payment-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mobile-toggle-btn {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #009b83;
+    background: white;
+    color: #009b83;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mobile-toggle-btn.active {
+    background: white;
+    color: #009b83;
+    border-color: #009b83;
+}
+
+.mobile-amount-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mobile-amount-btn {
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mobile-amount-btn.wide {
+    grid-column: 1 / -1;
+}
+
+.mobile-amount-btn i {
+    font-size: 18px;
+}
+
+.mobile-amount-btn .fa-check-circle {
+    color: #009b83;
+}
+
+.mobile-amount-btn .fa-circle {
+    color: #ccc;
+}
+
+.mobile-amount-btn.active {
+    border-color: #009b83;
+}
+
+.mobile-or-divider {
+    text-align: center;
+    position: relative;
+    margin: 25px 0;
+}
+
+.mobile-or-divider::before,
+.mobile-or-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.mobile-or-divider::before {
+    left: 0;
+}
+
+.mobile-or-divider::after {
+    right: 0;
+}
+
+.mobile-or-divider span {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: #999;
+    background: white;
+    padding: 0 15px;
+}
+
+.mobile-custom-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.mobile-custom-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+.mobile-custom-radio input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.mobile-custom-input {
+    position: relative;
+    flex: 1;
+    max-width: 180px;
+}
+
+.mobile-custom-input .currency-symbol {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: 700;
+    color: #009b83;
+    font-family: 'Lato', sans-serif;
+}
+
+.mobile-custom-input input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    font-weight: 700;
+    color: #009b83;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+}
+
+.mobile-custom-input input:focus {
+    outline: none;
+}
+
+.mobile-category-select {
+    margin-bottom: 20px;
+}
+
+.mobile-select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #009b83;
+    background: white;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23009b83' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+.mobile-add-donation-btn {
+    width: 100%;
+    padding: 18px 20px;
+    background: #009b83;
+    color: white;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.mobile-add-donation-btn:hover {
+    background: #008272;
+}
+
+.mobile-add-donation-btn:active {
+    background: #007a67;
+}
+
 .submit-text {
     display: none;
 }
@@ -4432,6 +4662,17 @@ body.scrolled .quick-donate-bar {
     
     body {
         padding-top: 100px;
+    }
+    
+    /* Hide Desktop Quick Donate, Show Mobile Version */
+    .quick-donate-desktop {
+        display: none;
+    }
+    
+    .quick-donate-mobile {
+        display: block;
+        padding: 20px 0;
+        background: #f8f8f8;
     }
     
     /* Quick Donate Bar */
