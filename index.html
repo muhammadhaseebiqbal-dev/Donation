@@ -33,10 +33,20 @@
                         <div class="currency-selector">
                             <span class="currency-text">GBP</span>
                             <i class="fas fa-chevron-down"></i>
+                            <div class="currency-dropdown">
+                                <a href="#" data-currency="GBP">GBP (£)</a>
+                                <a href="#" data-currency="USD">USD ($)</a>
+                                <a href="#" data-currency="EUR">EUR (€)</a>
+                            </div>
                         </div>
                         <div class="language-selector">
                             <span class="language-text">EN</span>
                             <i class="fas fa-chevron-down"></i>
+                            <div class="language-dropdown">
+                                <a href="#" data-lang="EN">English</a>
+                                <a href="#" data-lang="AR">Arabic</a>
+                                <a href="#" data-lang="UR">Urdu</a>
+                            </div>
                         </div>
                     </div>
                     <div class="separator">|</div>
@@ -490,7 +500,7 @@
                     
                     <div class="sidebar-actions">
                         <button class="btn-add-another" id="btnAddAnother">ADD ANOTHER <i class="fas fa-chevron-right"></i></button>
-                        <button class="btn-checkout">CHECKOUT <i class="fas fa-chevron-right"></i></button>
+                        <button class="btn-checkout" id="btnCheckout">CHECKOUT <i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -521,16 +531,7 @@
                             </div>
                         </label>
                         
-                        <label class="checkout-option">
-                            <input type="radio" name="additional" value="quran-pen">
-                            <div class="option-content">
-                                <div class="option-header">
-                                    <span class="option-label">EYE PROJECT</span>
-                                    <span class="option-price">£25.00</span>
-                                </div>
-                                <div class="option-title">QUR'AN READING PEN</div>
-                            </div>
-                        </label>
+                        
                         
                         <label class="checkout-option">
                             <input type="radio" name="additional" value="admin-fee">
@@ -549,7 +550,37 @@
                         <div class="total-amount-large">£360.00</div>
                     </div>
                     
-                    <button class="btn-complete-donation">COMPLETE DONATION <i class="fas fa-chevron-right"></i></button>
+                    <button class="btn-complete-donation" id="btnCompleteCheckout">COMPLETE DONATION <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Third Panel - Final Checkout -->
+            <div class="sidebar-panel complete-panel" id="completePanel">
+                <div class="sidebar-header">
+                    <button class="sidebar-back" id="backFromComplete">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="sidebar-title">
+                        <span>FINAL CHECKOUT</span>
+                    </div>
+                </div>
+                
+                <div class="sidebar-content">
+                    <h3 class="checkout-subtitle">Review your donation</h3>
+                    
+                    <div class="final-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Most Needed</span>
+                            <span class="summary-amount">£360.00</span>
+                        </div>
+                        
+                        <div class="checkout-total">
+                            <h3 class="total-label">GRAND TOTAL</h3>
+                            <div class="total-amount-large">£360.00</div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-complete-donation">PROCEED TO PAYMENT <i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -919,17 +950,46 @@
             const donationOverlay = document.getElementById('donationOverlay');
             const openDonationBtn = document.getElementById('openDonationSidebar');
             const closeDonationBtn = document.getElementById('closeDonationSidebar');
+            const btnAddAnother = document.getElementById('btnAddAnother');
+            const btnCheckout = document.getElementById('btnCheckout');
+            const backToSummary = document.getElementById('backToSummary');
+            const btnCompleteCheckout = document.getElementById('btnCompleteCheckout');
+            const backFromComplete = document.getElementById('backFromComplete');
             
             function openDonationSidebar() {
                 donationSidebar.classList.add('active');
                 donationOverlay.classList.add('active');
+                donationSidebar.classList.remove('show-checkout');
+                donationSidebar.classList.remove('show-complete');
                 document.body.style.overflow = 'hidden';
             }
             
             function closeDonationSidebar() {
                 donationSidebar.classList.remove('active');
+                donationSidebar.classList.remove('show-checkout');
+                donationSidebar.classList.remove('show-complete');
                 donationOverlay.classList.remove('active');
                 document.body.style.overflow = '';
+            }
+            
+            function showCheckoutPanel() {
+                donationSidebar.classList.add('show-checkout');
+                donationSidebar.classList.remove('show-complete');
+            }
+            
+            function hideCheckoutPanel() {
+                donationSidebar.classList.remove('show-checkout');
+                donationSidebar.classList.remove('show-complete');
+            }
+            
+            function showCompletePanel() {
+                donationSidebar.classList.add('show-checkout');
+                donationSidebar.classList.add('show-complete');
+            }
+            
+            function backToCheckoutPanel() {
+                donationSidebar.classList.add('show-checkout');
+                donationSidebar.classList.remove('show-complete');
             }
             
             if (openDonationBtn) {
@@ -938,6 +998,22 @@
             
             if (closeDonationBtn) {
                 closeDonationBtn.addEventListener('click', closeDonationSidebar);
+            }
+            
+            if (btnCheckout) {
+                btnCheckout.addEventListener('click', showCheckoutPanel);
+            }
+            
+            if (backToSummary) {
+                backToSummary.addEventListener('click', hideCheckoutPanel);
+            }
+            
+            if (btnCompleteCheckout) {
+                btnCompleteCheckout.addEventListener('click', showCompletePanel);
+            }
+            
+            if (backFromComplete) {
+                backFromComplete.addEventListener('click', backToCheckoutPanel);
             }
             
             if (donationOverlay) {
@@ -956,6 +1032,20 @@
                     if (parseInt(input.value) > 1) {
                         input.value = parseInt(input.value) - 1;
                     }
+                }
+                
+                // Currency selector
+                if (e.target.hasAttribute('data-currency')) {
+                    e.preventDefault();
+                    const currency = e.target.getAttribute('data-currency');
+                    document.querySelector('.currency-text').textContent = currency;
+                }
+                
+                // Language selector
+                if (e.target.hasAttribute('data-lang')) {
+                    e.preventDefault();
+                    const lang = e.target.getAttribute('data-lang');
+                    document.querySelector('.language-text').textContent = lang;
                 }
             });
         });
