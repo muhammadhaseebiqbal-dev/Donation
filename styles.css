@@ -51,6 +51,296 @@ h1 {
     margin-bottom: 2rem;
 }
 
+/* Mobile Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    color: #333;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 12px;
+    z-index: 10002;
+}
+
+.hamburger-menu i {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.menu-text {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 10px;
+    color: #333;
+    line-height: 1;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    height: 100dvh;
+    background: white;
+    z-index: 10004;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-sidebar.open {
+    left: 0;
+}
+
+.mobile-sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10003;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.mobile-sidebar-overlay.active {
+    pointer-events: auto;
+}
+
+.mobile-sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-sidebar-header {
+    background: #009b83;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+}
+
+.close-sidebar i {
+    font-size: 24px;
+}
+
+.close-sidebar span {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mobile-sidebar-content {
+    padding: 0;
+}
+
+/* Mobile Selectors */
+.mobile-selectors {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-selector-item {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.mobile-selector-item:last-child {
+    border-right: none;
+}
+
+.mobile-selector-item i {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.mobile-currency-dropdown,
+.mobile-language-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    display: none;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.mobile-selector-item:hover .mobile-currency-dropdown,
+.mobile-selector-item:hover .mobile-language-dropdown {
+    display: flex;
+}
+
+.mobile-currency-dropdown a,
+.mobile-language-dropdown a {
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+    font-size: 13px;
+}
+
+.mobile-currency-dropdown a:last-child,
+.mobile-language-dropdown a:last-child {
+    border-bottom: none;
+}
+
+.mobile-currency-dropdown a:hover,
+.mobile-language-dropdown a:hover {
+    background: #f8f8f8;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    padding: 0;
+}
+
+.mobile-nav-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+
+.mobile-nav-link:hover {
+    background: #f8f8f8;
+}
+
+.mobile-nav-link i {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Mobile Donate Section */
+.mobile-donate-section {
+    padding: 20px;
+    border-top: 2px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+.mobile-donate-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 20px;
+    background: #009b83;
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.mobile-donate-btn:hover {
+    background: #008272;
+}
+
+.mobile-donate-btn i {
+    font-size: 14px;
+}
+
+/* Mobile Header Icons */
+.mobile-header-icons {
+    display: none;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-icon-btn {
+    position: relative;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.mobile-icon-btn:active {
+    opacity: 0.6;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: #f4c842;
+    color: #333;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    padding: 1px 5px;
+    border-radius: 50%;
+    min-width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
 h2 {
     font-family: 'Oswald', sans-serif;
     font-size: 2.67rem;
@@ -83,8 +373,11 @@ p {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 10001;
     width: 100%;
+    max-width: 100vw;
     transition: all 0.3s ease;
 }
 
@@ -4061,5 +4354,604 @@ body.scrolled .quick-donate-bar {
     
     .result-box .amount {
         font-size: 36px;
+    }
+}
+
+/* Additional Comprehensive Responsive Styles for Landing Page */
+@media (max-width: 1400px) {
+    .navbar-container {
+        padding: 0 80px;
+    }
+    
+    body {
+        padding-top: 120px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar-container {
+        padding: 0 40px;
+    }
+    
+    /* Quick Donate Bar */
+    .quick-donate-form {
+        gap: 15px;
+    }
+    
+    .donate-select,
+    .donate-input {
+        min-width: 160px;
+        font-size: 13px;
+    }
+    
+    .quick-donate-submit {
+        padding: 12px 30px;
+        font-size: 13px;
+    }
+    
+    /* Hero Section */
+    .hero-content-wrapper {
+        padding: 60px 40px;
+    }
+    
+    .hero-line1 { font-size: 38px; }
+    .hero-line2 { font-size: 44px; }
+    .hero-line3 { font-size: 34px; }
+    .hero-line4 { font-size: 30px; }
+    
+    .hero-main-img {
+        width: 380px;
+        height: 480px;
+    }
+    
+    /* Zakat Section */
+    .zakat-badge {
+        right: 60px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    /* Donation Cards */
+    .donation-card {
+        min-width: 260px;
+    }
+    
+    .card-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-container {
+        padding: 0 20px;
+    }
+    
+    body {
+        padding-top: 100px;
+    }
+    
+    /* Quick Donate Bar */
+    .quick-donate-form::before {
+        font-size: 14px;
+    }
+    
+    .quick-donate-form {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .donate-select,
+    .donate-input {
+        flex: 1;
+        min-width: 140px;
+    }
+    
+    .quick-donate-submit {
+        width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero-content-wrapper {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    
+    .hero-text-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-line1 { font-size: 32px; }
+    .hero-line2 { font-size: 38px; }
+    .hero-line3 { font-size: 28px; }
+    .hero-line4 { font-size: 26px; }
+    
+    .hero-image-content {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .hero-main-img {
+        width: 320px;
+        height: 400px;
+    }
+    
+    .hero-donate-btn {
+        margin: 0 auto;
+    }
+    
+    /* Zakat Section */
+    .zakat-badge {
+        position: static;
+        margin: 0 auto 20px;
+        transform: none;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Donation Cards */
+    .donation-cards-container {
+        justify-content: flex-start;
+        gap: 0;
+        padding-left: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .donation-card {
+        min-width: 280px;
+        flex-shrink: 0;
+        margin-right: -60px;
+        scroll-snap-align: start;
+        transition: transform 0.3s ease;
+    }
+    
+    .donation-card:last-child {
+        margin-right: 20px;
+    }
+    
+    .donation-card:hover {
+        transform: scale(1.02);
+        z-index: 10;
+    }
+    
+    /* Achievements */
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Donation Sidebar */
+    .donation-sidebar {
+        width: 100% !important;
+    }
+    
+    .donation-sidebar.show-checkout,
+    .donation-sidebar.show-complete {
+        width: 100% !important;
+    }
+    
+    .sidebar-panels-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .sidebar-panel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    /* Navbar Header Full Width */
+    .navbar-header {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+    
+    /* Show Hamburger Menu */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Show Mobile Header Icons */
+    .mobile-header-icons {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    /* Hide Desktop Navigation */
+    .navbar-center {
+        display: none;
+    }
+    
+    /* Navbar */
+    .navbar-container {
+        padding: 0 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-height: 60px;
+        width: 100%;
+        margin: 0;
+        max-width: 100vw;
+    }
+    
+    .navbar-header.scrolled .navbar-container {
+        max-height: 60px;
+    }
+    
+    .navbar-logo {
+        padding: 10px 15px;
+        order: 2;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        min-width: auto;
+    }
+    
+    .navbar-logo img {
+        max-width: 120px;
+        height: auto;
+    }
+    
+    .hamburger-menu {
+        order: 1;
+        flex-shrink: 0;
+    }
+    
+    .mobile-header-icons {
+        order: 3;
+        flex-shrink: 0;
+    }
+    
+    .navbar-cta {
+        display: none;
+    }
+    
+    .navbar-cta {
+        min-width: 100%;
+        padding: 10px 15px;
+    }
+    
+    .cta-text,
+    .cta-phone {
+        font-size: 12px;
+    }
+    
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 11px;
+    }
+    
+    /* Quick Donate Bar */
+    .quick-donate-bar {
+        padding: 15px 0;
+    }
+    
+    .quick-donate-form::before {
+        display: none;
+    }
+    
+    .quick-donate-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .donate-select,
+    .donate-input {
+        width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        min-height: auto;
+    }
+    
+    .hero-content-wrapper {
+        padding: 30px 15px;
+    }
+    
+    .hero-line1 { font-size: 26px; }
+    .hero-line2 { font-size: 32px; }
+    .hero-line3 { font-size: 24px; }
+    .hero-line4 { font-size: 22px; }
+    
+    .arrow-icon {
+        font-size: 32px;
+    }
+    
+    .hero-main-img {
+        width: 280px;
+        height: 350px;
+    }
+    
+    .hero-donate-btn {
+        padding: 12px 30px;
+        font-size: 13px;
+    }
+    
+    /* Zakat Section */
+    .zakat-policy-section {
+        padding: 40px 0;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .section-description {
+        font-size: 0.95rem;
+    }
+    
+    /* Donation Cards */
+    .donation-cards-section {
+        padding: 40px 0;
+    }
+    
+    .donation-cards-container {
+        justify-content: flex-start;
+        gap: 0;
+        padding-left: 15px;
+    }
+    
+    .donation-card {
+        min-width: 260px;
+        margin-right: -80px;
+    }
+    
+    .donation-card:last-child {
+        margin-right: 15px;
+    }
+    
+    .card-title {
+        font-size: 18px;
+    }
+    
+    .card-btn {
+        padding: 10px 20px;
+        font-size: 11px;
+    }
+    
+    /* Achievements */
+    .achievements-section {
+        padding: 40px 0;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .achievement-number {
+        font-size: 2.5rem;
+    }
+    
+    .achievement-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 60px;
+        font-size: 16px;
+    }
+    
+    /* Navbar */
+    .navbar-header {
+        position: fixed;
+    }
+    
+    .navbar-logo {
+        padding: 8px 15px;
+    }
+    
+    .navbar-logo img {
+        max-width: 60px;
+    }
+    
+    .navbar-top-bar {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .currency-text,
+    .language-text {
+        font-size: 11px;
+    }
+    
+    .secondary-link {
+        font-size: 10px;
+    }
+    
+    .nav-link {
+        font-size: 18px;
+    }
+    
+    .navbar-cta {
+        flex-direction: column;
+        padding: 10px;
+        gap: 5px;
+    }
+    
+    /* Quick Donate Bar */
+    .quick-donate-bar {
+        padding: 12px 0;
+    }
+    
+    .donate-select,
+    .donate-input {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+    
+    .quick-donate-submit {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+    
+    /* Hero Section */
+    .hero-content-wrapper {
+        padding: 20px 10px;
+    }
+    
+    .hero-line1 { font-size: 22px; }
+    .hero-line2 { font-size: 28px; }
+    .hero-line3 { font-size: 20px; }
+    .hero-line4 { font-size: 18px; }
+    
+    .hero-main-img {
+        width: 240px;
+        height: 300px;
+    }
+    
+    .hero-donate-btn {
+        padding: 10px 25px;
+        font-size: 12px;
+    }
+    
+    /* Zakat Section */
+    .zakat-policy-section {
+        padding: 30px 0;
+    }
+    
+    .zakat-badge {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .badge-text {
+        font-size: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .section-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    /* Donation Cards */
+    .donation-cards-section {
+        padding: 30px 0;
+    }
+    
+    .donation-cards-container {
+        padding-left: 10px;
+    }
+    
+    .donation-card {
+        min-width: 220px;
+        margin-right: -100px;
+    }
+    
+    .donation-card:last-child {
+        margin-right: 10px;
+    }
+    
+    .card-title {
+        font-size: 16px;
+    }
+    
+    .card-btn {
+        padding: 8px 16px;
+        font-size: 10px;
+    }
+    
+    /* Achievements */
+    .achievements-section {
+        padding: 30px 0;
+    }
+    
+    .achievement-number {
+        font-size: 2rem;
+    }
+    
+    .achievement-text {
+        font-size: 0.85rem;
+    }
+    
+    /* Donation Sidebar */
+    .sidebar-header {
+        padding: 15px 20px;
+    }
+    
+    .sidebar-title {
+        font-size: 16px;
+    }
+    
+    .sidebar-content {
+        padding: 20px 15px;
+    }
+    
+    .item-title {
+        font-size: 16px;
+    }
+    
+    .item-price {
+        font-size: 20px;
+    }
+    
+    .total-amount {
+        font-size: 24px;
+    }
+    
+    /* Hide footer logos on mobile */
+    .footer-logos {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-line1 { font-size: 20px; }
+    .hero-line2 { font-size: 24px; }
+    .hero-line3 { font-size: 18px; }
+    .hero-line4 { font-size: 16px; }
+    
+    .hero-main-img {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+    }
+    
+    .donation-card {
+        min-width: 180px;
+    }
+    
+    .achievement-number {
+        font-size: 1.8rem;
     }
 }

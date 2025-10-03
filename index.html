@@ -11,9 +11,101 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="mobile-sidebar-header">
+            <button class="close-sidebar" id="closeSidebar" aria-label="Close Menu">
+                <i class="fas fa-times"></i>
+                <span>CLOSE</span>
+            </button>
+        </div>
+        <div class="mobile-sidebar-content">
+            <!-- Currency and Language Selectors -->
+            <div class="mobile-selectors">
+                <div class="mobile-selector-item">
+                    <span class="mobile-currency-text">GBP</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="mobile-currency-dropdown">
+                        <a href="#" data-currency="GBP">GBP (£)</a>
+                        <a href="#" data-currency="USD">USD ($)</a>
+                        <a href="#" data-currency="EUR">EUR (€)</a>
+                    </div>
+                </div>
+                <div class="mobile-selector-item">
+                    <span class="mobile-language-text">ENGLISH</span>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="mobile-language-dropdown">
+                        <a href="#" data-lang="EN">English</a>
+                        <a href="#" data-lang="AR">Arabic</a>
+                        <a href="#" data-lang="UR">Urdu</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <nav class="mobile-nav">
+                <div class="mobile-nav-item">
+                    <a href="appeals.html" class="mobile-nav-link">
+                        <span>APPEALS</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="zakat.html" class="mobile-nav-link">
+                        <span>ZAKAT</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>GET INVOLVED</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="about.html" class="mobile-nav-link">
+                        <span>ABOUT US</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="zakat.html" class="mobile-nav-link">
+                        <span>ZAKAT CALCULATOR</span>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link">
+                        <span>NEWS</span>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="contact.html" class="mobile-nav-link">
+                        <span>CONTACT US</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Mobile Donate Button -->
+            <div class="mobile-donate-section">
+                <a href="#" class="mobile-donate-btn">
+                    DONATE <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
+
     <!-- Navbar Header -->
     <header class="navbar-header">
         <div class="navbar-container">
+            <!-- Mobile Hamburger Menu -->
+            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+                <span class="menu-text">MENU</span>
+            </button>
+
             <!-- Logo Section -->
             <div class="navbar-logo">
                 <a href="index.html" title="Al Mustafa Welfare Trust">
@@ -23,6 +115,17 @@
                         AL MUSTAFA<br>WELFARE TRUST
                     </div>
                 </a>
+            </div>
+
+            <!-- Mobile Header Icons -->
+            <div class="mobile-header-icons">
+                <button class="mobile-icon-btn" id="mobileSearchBtn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="mobile-icon-btn" id="mobileCartBtn" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">1</span>
+                </button>
             </div>
 
             <!-- Navigation Section -->
@@ -395,13 +498,6 @@
                 <a href="#donate" class="cta-button">DONATE NOW <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-        </button>
     </header>
 
     <!-- Hero Section -->
@@ -913,6 +1009,102 @@
 
     <script src="navbar-scroll.js"></script>
     <script>
+        // Mobile Menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing mobile menu...');
+            
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
+            const closeSidebar = document.getElementById('closeSidebar');
+            
+            console.log('Hamburger menu:', hamburgerMenu);
+            console.log('Mobile sidebar:', mobileSidebar);
+            console.log('Mobile overlay:', mobileSidebarOverlay);
+            console.log('Close sidebar:', closeSidebar);
+            
+            function openMobileSidebar() {
+                console.log('Opening mobile sidebar...');
+                if (mobileSidebar) {
+                    mobileSidebar.classList.add('open');
+                    console.log('Added open class to sidebar');
+                }
+                if (mobileSidebarOverlay) {
+                    mobileSidebarOverlay.classList.add('active');
+                    console.log('Added active class to overlay');
+                }
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeMobileSidebar() {
+                console.log('Closing mobile sidebar...');
+                if (mobileSidebar) {
+                    mobileSidebar.classList.remove('open');
+                }
+                if (mobileSidebarOverlay) {
+                    mobileSidebarOverlay.classList.remove('active');
+                }
+                document.body.style.overflow = '';
+            }
+            
+            if (hamburgerMenu) {
+                console.log('Adding click listener to hamburger menu');
+                hamburgerMenu.addEventListener('click', function(e) {
+                    console.log('Hamburger menu clicked!');
+                    e.preventDefault();
+                    openMobileSidebar();
+                });
+            }
+            
+            if (closeSidebar) {
+                closeSidebar.addEventListener('click', function(e) {
+                    console.log('Close button clicked!');
+                    e.preventDefault();
+                    closeMobileSidebar();
+                });
+            }
+            
+            if (mobileSidebarOverlay) {
+                mobileSidebarOverlay.addEventListener('click', function(e) {
+                    console.log('Overlay clicked!');
+                    closeMobileSidebar();
+                });
+            }
+            
+            // Mobile currency selector
+            const mobileCurrencyItems = document.querySelectorAll('.mobile-currency-dropdown a');
+            const mobileCurrencyText = document.querySelector('.mobile-currency-text');
+            
+            mobileCurrencyItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const currency = this.getAttribute('data-currency');
+                    if (mobileCurrencyText) {
+                        mobileCurrencyText.textContent = currency;
+                    }
+                });
+            });
+            
+            // Mobile language selector
+            const mobileLanguageItems = document.querySelectorAll('.mobile-language-dropdown a');
+            const mobileLanguageText = document.querySelector('.mobile-language-text');
+            
+            mobileLanguageItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    const langNames = {
+                        'EN': 'ENGLISH',
+                        'AR': 'ARABIC',
+                        'UR': 'URDU'
+                    };
+                    if (mobileLanguageText) {
+                        mobileLanguageText.textContent = langNames[lang] || lang;
+                    }
+                });
+            });
+        });
+        
         // Simple search functionality
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.querySelector('.search-input');
