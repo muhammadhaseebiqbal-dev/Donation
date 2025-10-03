@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakat Calculator - Al Mustafa Trust</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 0208 569 6444</span>
+                    <span><i class="fas fa-envelope"></i> info@almustafatrust.org</span>
+                </div>
+                <div class="header-actions">
+                    <div class="language-currency">
+                        <select>
+                            <option>GBP - £</option>
+                        </select>
+                        <select>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                    <a href="index.html#donate" class="donate-btn">DONATE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=150&h=50&fit=crop&crop=center" alt="Al Mustafa Trust">
+                        <span class="logo-text">Al Mustafa Trust</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="appeals.html">APPEALS</a></li>
+                    <li><a href="zakat.html" class="active">ZAKAT</a></li>
+                    <li><a href="get-involved.html">GET INVOLVED</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header zakat-header">
+        <div class="container">
+            <h1>Zakat Calculator</h1>
+            <p>Calculate your Zakat obligation with our easy-to-use calculator</p>
+        </div>
+    </section>
+
+    <!-- Zakat Info -->
+    <section class="zakat-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-text">
+                    <h2>What is Zakat?</h2>
+                    <p>Zakat is one of the Five Pillars of Islam and is a form of obligatory charity. It is calculated as 2.5% of your qualifying wealth that has been held for a full lunar year.</p>
+                    
+                    <h3>Who must pay Zakat?</h3>
+                    <ul>
+                        <li>Must be a Muslim</li>
+                        <li>Must be of sound mind</li>
+                        <li>Must have reached puberty</li>
+                        <li>Must own wealth above the nisab threshold</li>
+                        <li>Wealth must be held for a full lunar year</li>
+                    </ul>
+
+                    <h3>Current Nisab Values (2025)</h3>
+                    <div class="nisab-values">
+                        <div class="nisab-item">
+                            <h4>Gold (87.48g)</h4>
+                            <p>£4,500 (approx.)</p>
+                        </div>
+                        <div class="nisab-item">
+                            <h4>Silver (612.36g)</h4>
+                            <p>£350 (approx.)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-image">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop&crop=center" alt="Zakat calculation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zakat Calculator -->
+    <section class="zakat-calculator">
+        <div class="container">
+            <h2>Calculate Your Zakat</h2>
+            <div class="calculator-form">
+                <div class="form-section">
+                    <h3>Cash and Bank Accounts</h3>
+                    <div class="input-group">
+                        <label for="cash">Cash at home</label>
+                        <input type="number" id="cash" placeholder="0" min="0" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="current-account">Current account balance</label>
+                        <input type="number" id="current-account" placeholder="0" min="0" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="savings-account">Savings account balance</label>
+                        <input type="number" id="savings-account" placeholder="0" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Gold and Silver</h3>
+                    <div class="input-group">
+                        <label for="gold">Gold (current value)</label>
+                        <input type="number" id="gold" placeholder="0" min="0" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="silver">Silver (current value)</label>
+                        <input type="number" id="silver" placeholder="0" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Investments and Business</h3>
+                    <div class="input-group">
+                        <label for="investments">Stocks and shares</label>
+                        <input type="number" id="investments" placeholder="0" min="0" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="business-assets">Business assets</label>
+                        <input type="number" id="business-assets" placeholder="0" min="0" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="other-assets">Other assets</label>
+                        <input type="number" id="other-assets" placeholder="0" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Debts and Liabilities</h3>
+                    <div class="input-group">
+                        <label for="debts">Total debts owed</label>
+                        <input type="number" id="debts" placeholder="0" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <div class="calculation-buttons">
+                    <button type="button" onclick="calculateZakat()" class="calculate-btn">Calculate Zakat</button>
+                    <button type="button" onclick="resetCalculator()" class="reset-btn">Reset</button>
+                </div>
+
+                <div class="result-section" id="zakat-result" style="display: none;">
+                    <h3>Your Zakat Calculation</h3>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <span class="label">Total Assets:</span>
+                            <span class="value" id="total-assets">£0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Total Debts:</span>
+                            <span class="value" id="total-debts">£0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Net Assets:</span>
+                            <span class="value" id="net-assets">£0</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="label">Zakat Due (2.5%):</span>
+                            <span class="value" id="zakat-due">£0</span>
+                        </div>
+                    </div>
+                    <div class="nisab-check" id="nisab-status"></div>
+                    <button onclick="donateZakat()" class="donate-zakat-btn">Donate Your Zakat Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AMWT® Projects & More</h4>
+                    <ul>
+                        <li><a href="#">Free Cataract Surgery</a></li>
+                        <li><a href="#">Sponsor a Hafiz</a></li>
+                        <li><a href="#">Water for life</a></li>
+                        <li><a href="#">Sadaqah Jariyah</a></li>
+                        <li><a href="#">Sponsor an Orphan</a></li>
+                        <li><a href="zakat.html">Zakat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Fast Causes</h4>
+                    <ul>
+                        <li><a href="#">Palestine</a></li>
+                        <li><a href="zakat.html">Zakat Calculator</a></li>
+                        <li><a href="#">Build a Mosque</a></li>
+                        <li><a href="#">Qurbani 2025</a></li>
+                        <li><a href="#">Build a School</a></li>
+                        <li><a href="#">Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Media Centre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <h4>Get our monthly charity updates</h4>
+                    <p>Get our monthly charity updates and feedback reports on how your donations are being spent by subscribing to our newsletter.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" id="newsletter-email">
+                        <button onclick="subscribeNewsletter()">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-footer">
+                    <p>Call us for information: <strong>0208 569 6444</strong></p>
+                </div>
+                <div class="copyright">
+                    <p>© Copyright 2025. Al Mustafa Welfare Trust® is a registered charity in England & Wales (1118492) and UK registered company 05581896.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

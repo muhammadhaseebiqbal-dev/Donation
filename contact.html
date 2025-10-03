@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Al Mustafa Trust</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 0208 569 6444</span>
+                    <span><i class="fas fa-envelope"></i> info@almustafatrust.org</span>
+                </div>
+                <div class="header-actions">
+                    <div class="language-currency">
+                        <select>
+                            <option>GBP - £</option>
+                        </select>
+                        <select>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                    <a href="index.html#donate" class="donate-btn">DONATE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=150&h=50&fit=crop&crop=center" alt="Al Mustafa Trust">
+                        <span class="logo-text">Al Mustafa Trust</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="appeals.html">APPEALS</a></li>
+                    <li><a href="zakat.html">ZAKAT</a></li>
+                    <li><a href="get-involved.html">GET INVOLVED</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header contact-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team for any questions or support</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-details">
+                    <h2>Get in Touch</h2>
+                    <p>We're here to help with any questions you may have about our work, how to donate, or how to get involved.</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Office Address</h3>
+                            <p>110 High Street<br>Hounslow, TW3 1NA<br>United Kingdom</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+44 (0) 208 569 6444</p>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@almustafatrust.org</p>
+                            <p>donations@almustafatrust.org</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h3>Emergency Hotline</h3>
+                            <p>+44 (0) 208 569 6444</p>
+                            <p>24/7 for urgent humanitarian situations</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form" onsubmit="submitContactForm(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Please select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="donations">Donations</option>
+                                <option value="zakat">Zakat Information</option>
+                                <option value="volunteer">Volunteering</option>
+                                <option value="media">Media Inquiry</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Please provide details about your inquiry..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                I would like to receive updates about Al Mustafa Trust's work
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Privacy Policy</a> *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Methods -->
+    <section class="donation-methods">
+        <div class="container">
+            <h2>Other Ways to Donate</h2>
+            <div class="methods-grid">
+                <div class="method-item">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Online Donation</h3>
+                    <p>Quick and secure online donations through our website</p>
+                    <a href="index.html#donate" class="method-btn">Donate Online</a>
+                </div>
+                
+                <div class="method-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone Donation</h3>
+                    <p>Call our fundraising team to make a donation over the phone</p>
+                    <a href="tel:02085696444" class="method-btn">Call Now</a>
+                </div>
+                
+                <div class="method-item">
+                    <i class="fas fa-university"></i>
+                    <h3>Bank Transfer</h3>
+                    <p>Transfer directly to our bank account for larger donations</p>
+                    <div class="bank-details">
+                        <small>Account: Al-Mustafa Welfare Trust<br>
+                        Sort Code: 30-90-89<br>
+                        Account No: 53820168</small>
+                    </div>
+                </div>
+                
+                <div class="method-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Cheque Donation</h3>
+                    <p>Send a cheque made payable to 'Al-Mustafa Welfare Trust'</p>
+                    <div class="address">
+                        <small>110 High Street<br>
+                        Hounslow, TW3 1NA</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Find Our Office</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&h=400&fit=crop&crop=center" alt="Office Location Map">
+                    <div class="map-overlay">
+                        <p>110 High Street, Hounslow, TW3 1NA</p>
+                        <a href="https://maps.google.com/?q=110+High+Street,+Hounslow,+TW3+1NA" target="_blank" class="map-btn">
+                            Open in Google Maps <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AMWT® Projects & More</h4>
+                    <ul>
+                        <li><a href="#">Free Cataract Surgery</a></li>
+                        <li><a href="#">Sponsor a Hafiz</a></li>
+                        <li><a href="#">Water for life</a></li>
+                        <li><a href="#">Sadaqah Jariyah</a></li>
+                        <li><a href="#">Sponsor an Orphan</a></li>
+                        <li><a href="zakat.html">Zakat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Fast Causes</h4>
+                    <ul>
+                        <li><a href="#">Palestine</a></li>
+                        <li><a href="zakat.html">Zakat Calculator</a></li>
+                        <li><a href="#">Build a Mosque</a></li>
+                        <li><a href="#">Qurbani 2025</a></li>
+                        <li><a href="#">Build a School</a></li>
+                        <li><a href="#">Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Media Centre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <h4>Get our monthly charity updates</h4>
+                    <p>Get our monthly charity updates and feedback reports on how your donations are being spent by subscribing to our newsletter.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" id="newsletter-email">
+                        <button onclick="subscribeNewsletter()">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-footer">
+                    <p>Call us for information: <strong>0208 569 6444</strong></p>
+                </div>
+                <div class="copyright">
+                    <p>© Copyright 2025. Al Mustafa Welfare Trust® is a registered charity in England & Wales (1118492) and UK registered company 05581896.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

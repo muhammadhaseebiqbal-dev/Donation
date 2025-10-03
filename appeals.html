@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appeals - Al Mustafa Trust</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> 0208 569 6444</span>
+                    <span><i class="fas fa-envelope"></i> info@almustafatrust.org</span>
+                </div>
+                <div class="header-actions">
+                    <div class="language-currency">
+                        <select>
+                            <option>GBP - £</option>
+                        </select>
+                        <select>
+                            <option>EN</option>
+                        </select>
+                    </div>
+                    <a href="index.html#donate" class="donate-btn">DONATE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=150&h=50&fit=crop&crop=center" alt="Al Mustafa Trust">
+                        <span class="logo-text">Al Mustafa Trust</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="appeals.html" class="active">APPEALS</a></li>
+                    <li><a href="zakat.html">ZAKAT</a></li>
+                    <li><a href="get-involved.html">GET INVOLVED</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                </ul>
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header appeals-header">
+        <div class="container">
+            <h1>Current Appeals</h1>
+            <p>Your donations make a real difference in the lives of those in need</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="appeals-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Appeals</button>
+                <button class="filter-btn" data-filter="emergency">Emergency</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="water">Water & Food</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Appeals -->
+    <section class="appeals-section">
+        <div class="container">
+            <h2>Emergency Appeals</h2>
+            <div class="appeals-grid">
+                <div class="appeal-card emergency" data-category="emergency">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop&crop=center" alt="Palestine Emergency">
+                        <div class="appeal-badge emergency">URGENT</div>
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Palestine & Gaza Emergency Appeal</h3>
+                        <p>Provide life-saving aid to families affected by the ongoing crisis in Palestine and Gaza.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£250,000</span>
+                                <span class="label">Raised</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">15,000+</span>
+                                <span class="label">Beneficiaries</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Palestine Emergency', 50)">Donate £50</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Palestine Emergency', 100)">Donate £100</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appeal-card emergency" data-category="emergency">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=250&fit=crop&crop=center" alt="Pakistan Floods">
+                        <div class="appeal-badge emergency">URGENT</div>
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Pakistan Floods Emergency</h3>
+                        <p>Help flood victims in Pakistan with emergency shelter, food, and medical aid.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£180,000</span>
+                                <span class="label">Raised</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">8,500+</span>
+                                <span class="label">Families Helped</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Pakistan Floods', 25)">Donate £25</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Pakistan Floods', 75)">Donate £75</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appeal-card emergency" data-category="emergency">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1586796676774-5ac6b0d3762e?w=400&h=250&fit=crop&crop=center" alt="Lebanon Emergency">
+                        <div class="appeal-badge emergency">URGENT</div>
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Lebanon Emergency Appeal</h3>
+                        <p>Support Lebanese families facing economic crisis with food parcels and medical care.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£95,000</span>
+                                <span class="label">Raised</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">3,200+</span>
+                                <span class="label">Families</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Lebanon Emergency', 30)">Donate £30</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Lebanon Emergency', 60)">Donate £60</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Appeals -->
+    <section class="appeals-section">
+        <div class="container">
+            <h2>Education Appeals</h2>
+            <div class="appeals-grid">
+                <div class="appeal-card education" data-category="education">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&crop=center" alt="Sponsor a Hafiz">
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Sponsor a Hafiz</h3>
+                        <p>Help a child memorize the Quran by sponsoring their Hifz education and living expenses.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£450</span>
+                                <span class="label">Annual Cost</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">1,200+</span>
+                                <span class="label">Students Sponsored</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Sponsor a Hafiz', 450)">Sponsor £450/year</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Sponsor a Hafiz', 38)">£38/month</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appeal-card education" data-category="education">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&h=250&fit=crop&crop=center" alt="Build a School">
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Build a School</h3>
+                        <p>Fund the construction of schools in underserved communities to provide quality education.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£15,000</span>
+                                <span class="label">Per School</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">45</span>
+                                <span class="label">Schools Built</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Build a School', 1000)">Donate £1,000</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Build a School', 500)">Donate £500</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appeal-card education" data-category="education">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=400&h=250&fit=crop&crop=center" alt="Orphan Sponsorship">
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Orphan Sponsorship</h3>
+                        <p>Provide comprehensive care, education, and support for orphaned children worldwide.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£360</span>
+                                <span class="label">Annual Cost</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">5,600+</span>
+                                <span class="label">Orphans Sponsored</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Orphan Sponsorship', 360)">Sponsor £360/year</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Orphan Sponsorship', 30)">£30/month</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Healthcare Appeals -->
+    <section class="appeals-section">
+        <div class="container">
+            <h2>Healthcare Appeals</h2>
+            <div class="appeals-grid">
+                <div class="appeal-card healthcare" data-category="healthcare">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop&crop=center" alt="Cataract Surgery">
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Free Cataract Surgery</h3>
+                        <p>Restore sight to those suffering from cataracts with life-changing eye surgery.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£30</span>
+                                <span class="label">Per Surgery</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">252,000+</span>
+                                <span class="label">Sight Restored</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Cataract Surgery', 30)">Fund 1 Surgery £30</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Cataract Surgery', 150)">Fund 5 Surgeries £150</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appeal-card healthcare" data-category="healthcare">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=250&fit=crop&crop=center" alt="Medical Aid">
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Medical Aid & Equipment</h3>
+                        <p>Provide essential medical equipment and supplies to hospitals and clinics in need.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£500</span>
+                                <span class="label">Medical Kit</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">120+</span>
+                                <span class="label">Clinics Supported</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Medical Aid', 100)">Donate £100</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Medical Aid', 500)">Medical Kit £500</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Water & Food Appeals -->
+    <section class="appeals-section">
+        <div class="container">
+            <h2>Water & Food Appeals</h2>
+            <div class="appeals-grid">
+                <div class="appeal-card water" data-category="water">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=250&fit=crop&crop=center" alt="Water Wells">
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Water Wells for Life</h3>
+                        <p>Build water wells and hand pumps to provide clean drinking water to communities.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£150</span>
+                                <span class="label">Hand Pump</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">850+</span>
+                                <span class="label">Wells Built</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Water Wells', 150)">Hand Pump £150</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Water Wells', 800)">Deep Well £800</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appeal-card water" data-category="water">
+                    <div class="appeal-image">
+                        <img src="https://images.unsplash.com/photo-1488228469209-c141f8bcd723?w=400&h=250&fit=crop&crop=center" alt="Food Parcels">
+                    </div>
+                    <div class="appeal-content">
+                        <h3>Food Parcels & Relief</h3>
+                        <p>Provide nutritious food packages to families facing hunger and food insecurity.</p>
+                        <div class="appeal-stats">
+                            <div class="stat">
+                                <span class="number">£25</span>
+                                <span class="label">Food Parcel</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">1.5M+</span>
+                                <span class="label">Parcels Distributed</span>
+                            </div>
+                        </div>
+                        <div class="appeal-actions">
+                            <button class="donate-btn-card" onclick="donateToAppeal('Food Parcels', 25)">1 Family £25</button>
+                            <button class="donate-btn-card" onclick="donateToAppeal('Food Parcels', 100)">4 Families £100</button>
+                            <a href="#" class="learn-more-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>AMWT® Projects & More</h4>
+                    <ul>
+                        <li><a href="#">Free Cataract Surgery</a></li>
+                        <li><a href="#">Sponsor a Hafiz</a></li>
+                        <li><a href="#">Water for life</a></li>
+                        <li><a href="#">Sadaqah Jariyah</a></li>
+                        <li><a href="#">Sponsor an Orphan</a></li>
+                        <li><a href="zakat.html">Zakat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Fast Causes</h4>
+                    <ul>
+                        <li><a href="#">Palestine</a></li>
+                        <li><a href="zakat.html">Zakat Calculator</a></li>
+                        <li><a href="#">Build a Mosque</a></li>
+                        <li><a href="#">Qurbani 2025</a></li>
+                        <li><a href="#">Build a School</a></li>
+                        <li><a href="#">Health</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="about.html">Our Mission</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Media Centre</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <h4>Get our monthly charity updates</h4>
+                    <p>Get our monthly charity updates and feedback reports on how your donations are being spent by subscribing to our newsletter.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" id="newsletter-email">
+                        <button onclick="subscribeNewsletter()">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-footer">
+                    <p>Call us for information: <strong>0208 569 6444</strong></p>
+                </div>
+                <div class="copyright">
+                    <p>© Copyright 2025. Al Mustafa Welfare Trust® is a registered charity in England & Wales (1118492) and UK registered company 05581896.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Appeals filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const appealCards = document.querySelectorAll('.appeal-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter cards
+                    appealCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // Donate to specific appeal
+        function donateToAppeal(appealName, amount) {
+            const donation = {
+                appeal: appealName,
+                amount: amount,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Save to local storage
+            const donations = JSON.parse(localStorage.getItem('appealDonations') || '[]');
+            donations.push(donation);
+            localStorage.setItem('appealDonations', JSON.stringify(donations));
+            
+            // Show confirmation
+            showNotification(`Thank you for donating £${amount} to ${appealName}!`, 'success');
+        }
+    </script>
+</body>
+</html>

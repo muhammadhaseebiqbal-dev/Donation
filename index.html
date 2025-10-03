@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al Mustafa Welfare Trust | A Muslim Charity Changing Lives</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar Header -->
+    <header class="navbar-header">
+        <div class="navbar-container">
+            <!-- Logo Section -->
+            <div class="navbar-logo">
+                <a href="index.html" title="Al Mustafa Welfare Trust">
+                    <img src="./assests/al-mustafa-logo.svg" alt="Al Mustafa Welfare Trust Logo" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="logo-fallback" style="display: none; color: white; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 700; text-align: center; line-height: 1.2;">
+                        AL MUSTAFA<br>WELFARE TRUST
+                    </div>
+                </a>
+            </div>
+
+            <!-- Navigation Section -->
+            <div class="navbar-center">
+                <!-- Search Bar -->
+                <div class="navbar-search">
+                    <input type="text" placeholder="SEARCH" class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+
+                <!-- Top Bar with Currency, Language & Secondary Nav -->
+                <div class="navbar-top-bar">
+                    <div class="currency-language">
+                        <div class="currency-selector">
+                            <span class="currency-text">GBP</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="language-selector">
+                            <span class="language-text">EN</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="separator">|</div>
+                    <nav class="secondary-nav">
+                        <a href="contact.html" class="secondary-link">CONTACT US</a>
+                        <a href="zakat.html" class="secondary-link">ZAKAT CALCULATOR</a>
+                    </nav>
+                </div>
+
+                <!-- Primary Navigation -->
+                <nav class="primary-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="appeals.html" class="nav-link">APPEALS <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu appeals-dropdown">
+                                <div class="dropdown-container">
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-eye dropdown-icon sight-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">SIGHT RESTORATION PROGRAMME</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Cataract Charity Appeal</a></li>
+                                                    <li><a href="#">Al Mustafa Eye Hospital-Dargyal</a></li>
+                                                    <li><a href="#">Al Mustafa Eye Hospital-Lahore</a></li>
+                                                    <li><a href="#">Al Mustafa Mansehra Hospital</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-tint dropdown-icon water-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">WATER FOR LIFE</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Water Wells</a></li>
+                                                    <li><a href="#">Natural Water Supply Project</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-utensils dropdown-icon food-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">FOOD AID</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Break The Hunger</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-child dropdown-icon orphan-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">ORPHAN SPONSORSHIP</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Sponsor an Orphan</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-graduation-cap dropdown-icon education-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">EDUCATION</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Build a School</a></li>
+                                                    <li><a href="#">Sponsor a Hafiz</a></li>
+                                                    <li><a href="#">Sponsor a Student</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-exclamation-triangle dropdown-icon disaster-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">DISASTER AND EMERGENCY RELIEF</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Pakistan Flood Emergency</a></li>
+                                                    <li><a href="#">Palestine Emergency Appeal</a></li>
+                                                    <li><a href="#">Syria</a></li>
+                                                    <li><a href="#">Yemen</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-hands-helping dropdown-icon neighbours-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">NEIGHBOURS FIRST</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Homeless Project</a></li>
+                                                    <li><a href="#">The Community Shelf</a></li>
+                                                    <li><a href="#">Community Support Project</a></li>
+                                                    <li><a href="#">Prison Rehabilitation Project</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-gift dropdown-icon sadaqah-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">SADAQAH JARIYAH GIFTING</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Sadaqah Jariyah</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-heart dropdown-icon more-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">MORE APPEALS</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Zakat</a></li>
+                                                    <li><a href="#">Al Aqsa Project</a></li>
+                                                    <li><a href="#">Ambulance</a></li>
+                                                    <li><a href="#">Aqiqah & Sadaqah Sacrifice</a></li>
+                                                    <li><a href="#">One Mosque One Palace</a></li>
+                                                    <li><a href="#">Olive Tree</a></li>
+                                                    <li><a href="#">The Freedom Campaign</a></li>
+                                                    <li><a href="#">Other Appeals</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="zakat.html" class="nav-link">ZAKAT <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu zakat-dropdown">
+                                <div class="dropdown-container">
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-hands-helping dropdown-icon zakat-main-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">ZAKAT</h3>
+                                                <p class="dropdown-description">Donate your Zakat today and we'll ensure 100% of your donation goes to those who need it most!</p>
+                                                <a href="#" class="dropdown-cta-btn">FIND OUT MORE</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-hands-helping dropdown-icon zakat-resources-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">ZAKAT RESOURCES</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Zakat FAQs</a></li>
+                                                    <li><a href="#">Zakat Calculator</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-heart dropdown-icon zakat-projects-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">ZAKAT PROJECTS</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Zakat</a></li>
+                                                    <li><a href="#">Palestine & Gaza</a></li>
+                                                    <li><a href="#">Yemen</a></li>
+                                                    <li><a href="#">Cataract Charity Appeal</a></li>
+                                                    <li><a href="#">Sponsor a Hafiz</a></li>
+                                                    <li><a href="#">Orphan Sponsorship</a></li>
+                                                    <li><a href="#">Water for life</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">GET INVOLVED <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu get-involved-dropdown">
+                                <div class="dropdown-container">
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-plane dropdown-icon volunteering-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">VOLUNTEERING ABROAD</h3>
+                                                <p class="dropdown-description">The volunteering abroad experience is a fantastic way to fully experience a new culture and to work directly with local people...</p>
+                                                <a href="#" class="dropdown-cta-btn">FIND OUT MORE</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-calendar dropdown-icon events-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">EVENTS</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">See all upcoming events</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-pound-sign dropdown-icon fundraising-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">FUNDRAISING</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Fundraising</a></li>
+                                                    <li><a href="#">Recycle Your Clothes</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-users dropdown-icon membership-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">MEMBERSHIP CLUB</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Become a Member</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-hands dropdown-icon volunteering-local-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">VOLUNTEERING</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Volunteer Now</a></li>
+                                                    <li><a href="#">Volunteering abroad</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">ABOUT US <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu about-dropdown">
+                                <div class="dropdown-container">
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-history dropdown-icon history-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">OUR HISTORY</h3>
+                                                <p class="dropdown-description">Get to know the story and history behind Al Mustafa Welfare Trust as you follow us on our incredible journey to where we are today.</p>
+                                                <a href="#" class="dropdown-cta-btn">FIND OUT MORE</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-heart dropdown-icon statement-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">MAKING A STATEMENT</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Our History</a></li>
+                                                    <li><a href="#">Our Current Appeals</a></li>
+                                                    <li><a href="#">Our Latest News & Updates</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-hands-helping dropdown-icon get-involved-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">GET INVOLVED</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">See all upcoming Events</a></li>
+                                                    <li><a href="#">Volunteer Now</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-section">
+                                        <div class="dropdown-item">
+                                            <i class="fas fa-chart-line dropdown-icon reports-icon"></i>
+                                            <div class="dropdown-content">
+                                                <h3 class="dropdown-title">WHAT HAVE WE BEEN UP TO</h3>
+                                                <ul class="dropdown-links">
+                                                    <li><a href="#">Activity Report 2025 (PDF)</a></li>
+                                                    <li><a href="#">Activity Report 2024 (PDF)</a></li>
+                                                    <li><a href="#">Activity Report 2023 (PDF)</a></li>
+                                                    <li><a href="#">Eye Report 2023 (PDF)</a></li>
+                                                    <li><a href="#">Eye Report 2022 (PDF)</a></li>
+                                                    <li><a href="#">Qurbani Report 2021 (PDF)</a></li>
+                                                    <li><a href="#">Qurbani Report 2020 (PDF)</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Call to Action Section -->
+            <div class="navbar-cta">
+                <div class="cta-text">Call us for information</div>
+                <div class="cta-phone">0208 569 6444</div>
+                <a href="#donate" class="cta-button">DONATE NOW <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-content-wrapper">
+                <div class="hero-text-content">
+                    <h1 class="hero-heading">
+                        <span class="hero-line1">TURNING COMPASSION</span>
+                        <span class="hero-line2">INTO <span class="arrow-icon">»</span> ACTION</span>
+                        <span class="hero-line3">WITH YOUR ZAKAT</span>
+                        <span class="hero-line4">FOR LASTING CHANGE</span>
+                    </h1>
+                    <button class="hero-donate-btn">DONATE NOW <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="hero-image-content">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&h=600&fit=crop&crop=center" alt="Child with school supplies" class="hero-main-img">
+                </div>
+            </div>
+            
+            <!-- Navigation Circles -->
+            <div class="hero-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot active"></span>
+            </div>
+            
+            <!-- Scroll Icon -->
+            <div class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Donate Bar -->
+    <section class="quick-donate-bar">
+        <div class="container-fluid">
+            <div class="quick-donate-form">
+                <select class="donate-select">
+                    <option>Quick Donate</option>
+                </select>
+                <select class="donate-select">
+                    <option>Single Payment</option>
+                </select>
+                <input type="text" class="donate-input" placeholder="£10.00" value="£10.00">
+                <select class="donate-select wide">
+                    <option>General Donation</option>
+                </select>
+                <button class="quick-donate-submit">
+                    <span class="submit-text">Donate today to Palestine</span>
+                    <span class="submit-subtext">We distribute clothes aid, emergency housing repairs and provide warm clothes to combat the harsh winters</span>
+                    <div class="submit-links">
+                        <a href="#">DONATE</a>
+                        <a href="#">REGULAR</a>
+                        <a href="#">RECURRING</a>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zakat Policy Section -->
+    <section class="zakat-policy-section">
+        <div class="container">
+            <div class="zakat-badge">
+                <span class="badge-text">100%<br>ZAKAT<br>POLICY</span>
+            </div>
+            <h2 class="section-title green-title">GIVE YOUR ZAKAT & TRANSFORM LIVES</h2>
+            <h3 class="section-subtitle">A MUSLIM CHARITY WITH A 100% ZAKAT POLICY</h3>
+            <p class="section-description">
+                Our 100% Zakat Policy means that 100% of your Zakat will reach those who need it the most.
+                With complete transparency and trust, your Zakat donation helps others, transforms lives, and fulfills your spiritual duty.
+            </p>
+        </div>
+    </section>
+
+    <!-- Donation Cards Carousel -->
+    <section class="donation-cards-section">
+        <div class="container">
+            <div class="carousel-wrapper">
+                <div class="donation-cards-container">
+                    <div class="donation-card teal-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop&crop=center" alt="Sponsor a Hafiz">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">SPONSOR A HAFIZ</h3>
+                            <div class="card-actions">
+                                <button class="card-btn donate-btn-white">DONATE</button>
+                                <button class="card-btn learn-more-btn">LEARN MORE</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="donation-card pink-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=300&h=200&fit=crop&crop=center" alt="Orphan Sponsorship">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">ORPHAN<br>SPONSORSHIP</h3>
+                            <div class="card-actions">
+                                <button class="card-btn donate-btn-white">DONATE</button>
+                                <button class="card-btn learn-more-btn">LEARN MORE</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="donation-card teal-dark-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center" alt="Al Aqsa Project">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">AL AQSA PROJECT</h3>
+                            <div class="card-actions">
+                                <button class="card-btn donate-btn-white">DONATE</button>
+                                <button class="card-btn learn-more-btn">LEARN MORE</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="donation-card red-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop&crop=center" alt="Yemen Emergency">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">YEMEN EMERGENCY<br>APPEAL</h3>
+                            <div class="card-actions">
+                                <button class="card-btn donate-btn-white">DONATE</button>
+                                <button class="card-btn learn-more-btn">LEARN MORE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-dots">
+                <span class="carousel-dot"></span>
+                <span class="carousel-dot active"></span>
+                <span class="carousel-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-main-title">CHANGING LIVES AND BUILDING A BRIGHTER FUTURE</h2>
+            <div class="about-content-grid">
+                <div class="about-text">
+                    <p class="about-paragraph">
+                        <strong>Al-Mustafa Welfare Trust is a Muslim charity dedicated to eradicating global poverty,</strong> and for over 40 years has been delivering life-saving humanitarian aid to the poorest countries in the world.
+                    </p>
+                    <p class="about-paragraph">
+                        We transform millions of lives daily through healthcare and sight restoration. Pioneering free eye camps in Pakistan, our programme now spans Asia, Africa & the Middle East, restoring sight to 252,028 people.
+                    </p>
+                    <p class="about-paragraph">
+                        Our projects also include <a href="#" class="text-link">Hifz education</a>, <a href="#" class="text-link">orphan care</a>, food aid, <a href="#" class="text-link">clean water</a>, and disaster relief in <a href="#" class="text-link">Gaza</a>, Yemen, Syria, Afghanistan, and Lebanon, fostering long-term change.
+                    </p>
+                    <button class="cta-button-green">HELP US BUILD A BETTER TOMORROW <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=500&h=350&fit=crop&crop=center" alt="Child building future">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Highlights -->
+    <section class="achievements-section">
+        <div class="container">
+            <h2 class="section-main-title">ACHIEVEMENT HIGHLIGHTS</h2>
+            <div class="achievements-carousel-wrapper">
+                <button class="achievement-arrow left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <h3 class="achievement-number">3.5 M</h3>
+                        <p class="achievement-label">Qurbani Meat<br>Distribution<br>Beneficiaries</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h3 class="achievement-number">1.5 M</h3>
+                        <p class="achievement-label">Food Parcel<br>Distributions</p>
+                    </div>
+                    <div class="achievement-item highlight">
+                        <h3 class="achievement-number green">252 K</h3>
+                        <p class="achievement-label">Cataract<br>Operations<br>Completed</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h3 class="achievement-number">1.7 M</h3>
+                        <p class="achievement-label">Health<br>Beneficiaries</p>
+                    </div>
+                    <div class="achievement-item">
+                        <h3 class="achievement-number">1.1 M</h3>
+                        <p class="achievement-label">Educational<br>Beneficiaries</p>
+                    </div>
+                </div>
+
+                <button class="achievement-arrow right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ways to Give -->
+    <section class="ways-to-give-section">
+        <div class="container">
+            <h2 class="section-main-title">MORE WAYS TO REACH OUT & GIVE</h2>
+            <div class="ways-grid">
+                <div class="way-item">
+                    <i class="fas fa-phone-volume way-icon"></i>
+                    <h3 class="way-title">Donate over the phone</h3>
+                    <p class="way-text">
+                        To donate over the phone, call <strong>+44 (0)208 569 6444</strong> and ask for the Fundraising Team.
+                    </p>
+                </div>
+                <div class="way-item">
+                    <i class="fas fa-thumbs-up way-icon"></i>
+                    <h3 class="way-title">Donate by Cheque</h3>
+                    <p class="way-text">
+                        To donate by cheque, please make it payable to '<strong>Al-Mustafa Welfare Trust</strong>' and send it to us at <strong>110 High Street HOUNSLOW TW3 1NA</strong>
+                    </p>
+                </div>
+                <div class="way-item">
+                    <i class="fas fa-heart way-icon"></i>
+                    <h3 class="way-title">Fundraise for AMWT®</h3>
+                    <p class="way-text">
+                        There are loads of ways you can fundraise for AMWT®. Fancy running a marathon, or jumping out of a plane?
+                    </p>
+                </div>
+                <div class="way-item">
+                    <i class="fas fa-university way-icon"></i>
+                    <h3 class="way-title">Donate by Bank</h3>
+                    <p class="way-text">
+                        To donate by bank please use account name '<strong>Al-Mustafa Welfare Trust</strong>'. Account No. <strong>53820168</strong> Sort Code: <strong>30-90-89</strong> BIC: <strong>LOYDGB21256</strong> IBAN: <strong>GB18LOYD30908953820168</strong>
+                    </p>
+                </div>
+            </div>
+            <p class="disclaimer-text">
+                Please inform us within 2 working days of a bank transfer being made, if not then the charity will receipt it as a 'General Donation' in the 'Most Needy' project, as an anonymous donation
+            </p>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="latest-news-section">
+        <div class="container">
+            <h2 class="section-main-title">LATEST NEWS FROM AL MUSTAFA WELFARE TRUST</h2>
+            <div class="news-events-grid">
+                <div class="news-column">
+                    <div class="news-item">
+                        <span class="news-tag">NEWS</span>
+                        <h3 class="news-title">Muhammad Yousaf's Survival Story during Floods in Pakistan</h3>
+                        <p class="news-date">SEPTEMBER 23, 2025</p>
+                        <button class="news-btn">READ MORE <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <div class="news-item">
+                        <span class="news-tag">NEWS</span>
+                        <h3 class="news-title">We Feel Deep Sorrow for Families Lost in the Earthquake in Afghanistan</h3>
+                        <p class="news-date">SEPTEMBER 05, 2025</p>
+                        <button class="news-btn">READ MORE <i class="fas fa-arrow-right"></i></button>
+                    </div>
+
+                    <div class="news-item">
+                        <span class="news-tag">NEWS</span>
+                        <h3 class="news-title">What is the Difference Between Sadaqah & Lillah?</h3>
+                        <p class="news-date">AUGUST 29, 2025</p>
+                        <button class="news-btn">READ MORE <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="events-column">
+                    <h3 class="events-heading">UPCOMING EVENTS</h3>
+                    <div class="event-item">
+                        <div class="event-date-badge">
+                            <span class="event-day">25</span>
+                            <span class="event-month">Oct</span>
+                        </div>
+                        <div class="event-details">
+                            <p class="event-time">09:00 am - 06:00 pm</p>
+                            <h4 class="event-title">Trek For Gaza - Seven Sisters</h4>
+                            <p class="event-location">Seven Sisters, S Downs Way,, Eastbourne,, BN20 0AB, GB</p>
+                            <a href="#" class="event-link">MORE DETAILS ABOUT THIS EVENT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="more-news-link">
+                <a href="#" class="link-with-arrow">MORE NEWS & EVENTS <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4 class="footer-heading">AMWT® Projects & More</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Zakat Fund</a></li>
+                            <li><a href="#">Orphan Sponsorship</a></li>
+                            <li><a href="#">Honour the Elderly</a></li>
+                            <li><a href="#">Health</a></li>
+                            <li><a href="#">Build a School</a></li>
+                            <li><a href="#">Islamic Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Fast Causes</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Free Cataract Surgery</a></li>
+                            <li><a href="#">Sponsor a Hafiz</a></li>
+                            <li><a href="#">Water for life</a></li>
+                            <li><a href="#">Sadaqah Jariyah</a></li>
+                            <li><a href="#">Sponsor an Orphan</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Fidel</h4>
+                        <ul class="footer-links">
+                            <li><a href="zakat.html">Zakat</a></li>
+                            <li><a href="zakat.html">Zakat Calculator</a></li>
+                            <li><a href="#">Build a Mosque</a></li>
+                            <li><a href="#">Qurbani 2025</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">AMWT®</h4>
+                        <ul class="footer-links">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col newsletter-col">
+                        <p class="newsletter-text">
+                            Get our monthly charity updates and feedback reports on how your donations are being spent by subscribing to our newsletter.
+                        </p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email" class="newsletter-input">
+                            <button type="submit" class="newsletter-submit"><i class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-grid">
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="footer-contact">
+                        <p>Call us for information</p>
+                        <h3 class="phone-number">0208 569 6444</h3>
+                        <p class="connect-text">Connect</p>
+                    </div>
+                    <div class="footer-logos">
+                        <img src="https://via.placeholder.com/80x40/666/FFF?text=Logo1" alt="Certification">
+                        <img src="https://via.placeholder.com/80x40/666/FFF?text=Logo2" alt="Certification">
+                    </div>
+                </div>
+                <div class="copyright-row">
+                    <p>© Copyright 2025. Al Mustafa Welfare Trust® is a registered charity in England & Wales (1118492) and UK registered company 05581896.</p>
+                    <div class="footer-links-bottom">
+                        <a href="#">Terms & Conditions</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Sitemap</a>
+                        <a href="contact.html">Contact Us</a>
+                        <a href="#" class="site-by">Site by i3MEDIA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="slider.js"></script>
+    <script src="navbar-scroll.js"></script>
+</body>
+</html>
