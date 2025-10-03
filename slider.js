@@ -3,6 +3,94 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing page...');
     
+    // Test search elements immediately
+    setTimeout(function() {
+        const searchInput = document.querySelector('.search-input');
+        const searchContainer = document.querySelector('.navbar-search');
+        console.log('Search test:', {
+            input: !!searchInput,
+            container: !!searchContainer,
+            inputValue: searchInput ? searchInput.placeholder : 'not found'
+        });
+    }, 100);
+    
+    // Search functionality
+    const searchInput = document.querySelector('.search-input');
+    const searchIcon = document.querySelector('.search-icon');
+    const searchContainer = document.querySelector('.navbar-search');
+    const searchOverlay = document.querySelector('.search-overlay');
+    const searchClose = document.querySelector('.search-close');
+    
+    console.log('Search elements found:', {
+        searchInput: !!searchInput,
+        searchIcon: !!searchIcon,
+        searchContainer: !!searchContainer,
+        searchOverlay: !!searchOverlay,
+        searchClose: !!searchClose
+    });
+    
+    if (searchInput && searchContainer) {
+        // Open search dropdown
+        function openSearch() {
+            console.log('Opening search dropdown');
+            searchContainer.classList.add('active');
+            if (searchOverlay) searchOverlay.classList.add('active');
+            searchInput.focus();
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close search dropdown
+        function closeSearch() {
+            console.log('Closing search dropdown');
+            searchContainer.classList.remove('active');
+            if (searchOverlay) searchOverlay.classList.remove('active');
+            searchInput.blur();
+            document.body.style.overflow = '';
+        }
+        
+        // Event listeners
+        searchInput.addEventListener('focus', function(e) {
+            console.log('Search input focused');
+            openSearch();
+        });
+        
+        searchInput.addEventListener('click', function(e) {
+            console.log('Search input clicked');
+            openSearch();
+        });
+        
+        if (searchIcon) {
+            searchIcon.addEventListener('click', function(e) {
+                console.log('Search icon clicked');
+                openSearch();
+            });
+        }
+        
+        if (searchClose) {
+            searchClose.addEventListener('click', function(e) {
+                console.log('Search close clicked');
+                closeSearch();
+            });
+        }
+        
+        if (searchOverlay) {
+            searchOverlay.addEventListener('click', function(e) {
+                console.log('Search overlay clicked');
+                closeSearch();
+            });
+        }
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && searchContainer.classList.contains('active')) {
+                console.log('Escape key pressed');
+                closeSearch();
+            }
+        });
+    } else {
+        console.error('Search elements not found');
+    }
+    
     // Card button functionality
     const cards = document.querySelectorAll('.donation-card');
     cards.forEach((card, index) => {
@@ -213,34 +301,35 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'translateY(0) scale(1)';
         });
     });
-
-    // Achievement Number Animation
-    const achievementNumbers = document.querySelectorAll('.achievement-number');
-    const animateNumbers = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const text = target.textContent;
-                const number = parseFloat(text.replace(/[^\d.]/g, ''));
-                const suffix = text.replace(/[\d.\s]/g, '');
-                
-                let current = 0;
-                const increment = number / 50;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= number) {
-                        target.textContent = text;
-                        clearInterval(timer);
-                    } else {
-                        target.textContent = current.toFixed(1) + ' ' + suffix;
-                    }
-                }, 30);
-                
-                observer.unobserve(target);
-            }
-        });
-    };
-
-    const numberObserver = new IntersectionObserver(animateNumbers, { threshold: 0.5 });
-    achievementNumbers.forEach(num => numberObserver.observe(num));
+    });
 });
+
+// Achievement Number Animation
+const achievementNumbers = document.querySelectorAll('.achievement-number');
+const animateNumbers = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const target = entry.target;
+            const text = target.textContent;
+            const number = parseFloat(text.replace(/[^\d.]/g, ''));
+            const suffix = text.replace(/[\d.\s]/g, '');
+            
+            let current = 0;
+            const increment = number / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= number) {
+                    target.textContent = text;
+                    clearInterval(timer);
+                } else {
+                    target.textContent = current.toFixed(1) + ' ' + suffix;
+                }
+            }, 30);
+            
+            observer.unobserve(target);
+        }
+    });
+};
+
+const numberObserver = new IntersectionObserver(animateNumbers, { threshold: 0.5 });
+achievementNumbers.forEach(num => numberObserver.observe(num));

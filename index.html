@@ -27,12 +27,6 @@
 
             <!-- Navigation Section -->
             <div class="navbar-center">
-                <!-- Search Bar -->
-                <div class="navbar-search">
-                    <input type="text" placeholder="SEARCH" class="search-input">
-                    <i class="fas fa-search search-icon"></i>
-                </div>
-
                 <!-- Top Bar with Currency, Language & Secondary Nav -->
                 <div class="navbar-top-bar">
                     <div class="currency-language">
@@ -330,8 +324,58 @@
                                 </div>
                             </div>
                         </li>
+                        <li class="nav-item search-nav-item">
+                            <i class="fas fa-search search-nav-icon"></i>
+                        </li>
                     </ul>
                 </nav>
+                
+                <!-- Search Bar -->
+                <div class="navbar-search">
+                    <input type="text" placeholder="SEARCH" class="search-input">
+                    <i class="fas fa-search search-icon"></i>
+                    
+                    <!-- Search Dropdown -->
+                    <div class="search-dropdown">
+                        <button class="search-close">
+                            CLOSE <i class="fas fa-times"></i>
+                        </button>
+                        
+                        <div class="search-section">
+                            <h3>Popular Projects</h3>
+                            <ul class="search-results">
+                                <li><a href="#">CATARACT CHARITY APPEAL <i class="fas fa-chevron-right result-arrow"></i></a></li>
+                                <li><a href="#">ORPHAN SPONSORSHIP <i class="fas fa-chevron-right result-arrow"></i></a></li>
+                                <li><a href="#">SPONSOR A HAFIZ <i class="fas fa-chevron-right result-arrow"></i></a></li>
+                                <li><a href="#">WATER FOR LIFE <i class="fas fa-chevron-right result-arrow"></i></a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="search-section">
+                            <h3>Popular Donations</h3>
+                            <div class="popular-donations">
+                                <div class="donation-quick-item">
+                                    <h4>QURAN READING PEN</h4>
+                                    <p>For £25.00 you can help the blind read the Qur'an</p>
+                                    <a href="#" class="donation-quick-btn">DONATE <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                                <div class="donation-quick-item">
+                                    <h4>SEWING MACHINE</h4>
+                                    <p>For £50.00 help a mother earn her own living</p>
+                                    <a href="#" class="donation-quick-btn">DONATE <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                                <div class="donation-quick-item">
+                                    <h4>OLIVE TREE</h4>
+                                    <p>For £10 you can plant an Olive Tree in Gaza, Palestine.</p>
+                                    <a href="#" class="donation-quick-btn">DONATE <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Overlay -->
+                <div class="search-overlay"></div>
             </div>
 
             <!-- Call to Action Section -->
@@ -387,27 +431,129 @@
         <div class="container-fluid">
             <div class="quick-donate-form">
                 <select class="donate-select">
-                    <option>Quick Donate</option>
-                </select>
-                <select class="donate-select">
                     <option>Single Payment</option>
+                    <option>Monthly</option>
                 </select>
-                <input type="text" class="donate-input" placeholder="£10.00" value="£10.00">
+                <input type="text" class="donate-input" placeholder="£40.00" value="£40.00">
                 <select class="donate-select wide">
                     <option>General Donation</option>
                 </select>
-                <button class="quick-donate-submit">
-                    <span class="submit-text">Donate today to Palestine</span>
-                    <span class="submit-subtext">We distribute clothes aid, emergency housing repairs and provide warm clothes to combat the harsh winters</span>
-                    <div class="submit-links">
-                        <a href="#">DONATE</a>
-                        <a href="#">REGULAR</a>
-                        <a href="#">RECURRING</a>
-                    </div>
-                </button>
+                <button class="quick-donate-submit" id="openDonationSidebar">DONATE NOW</button>
             </div>
         </div>
     </section>
+
+    <!-- Donation Sidebar -->
+    <div class="donation-sidebar-overlay" id="donationOverlay"></div>
+    <div class="donation-sidebar" id="donationSidebar">
+        <div class="sidebar-panels-container">
+            <!-- Left Panel - Donation Summary -->
+            <div class="sidebar-panel left-panel" id="leftPanel">
+                <div class="sidebar-header">
+                    <button class="sidebar-close" id="closeDonationSidebar">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="sidebar-title">
+                        <i class="fas fa-check-circle"></i>
+                        <span>DONATION ADDED</span>
+                    </div>
+                </div>
+                
+                <div class="sidebar-content">
+                    <div class="donation-info">
+                        <p class="donating-to">You are donating to <span class="cause-count">1 cause</span></p>
+                    </div>
+                    
+                    <div class="donation-item">
+                        <h3 class="item-title">MOST NEEDED</h3>
+                        <div class="item-details">
+                            <p>Most Needed one off</p>
+                            <p>Single Payment,</p>
+                            <p>General Donation</p>
+                        </div>
+                        <div class="item-controls">
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="9" min="1">
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                            <div class="item-price">£360.00</div>
+                        </div>
+                        <button class="remove-btn">Remove</button>
+                        <button class="add-optional">+ Add (Optional)</button>
+                    </div>
+                    
+                    <div class="donations-total">
+                        <h3 class="total-title">DONATIONS</h3>
+                        <div class="total-amount">£360.00</div>
+                    </div>
+                    
+                    <div class="sidebar-actions">
+                        <button class="btn-add-another" id="btnAddAnother">ADD ANOTHER <i class="fas fa-chevron-right"></i></button>
+                        <button class="btn-checkout">CHECKOUT <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Panel - Checkout Options -->
+            <div class="sidebar-panel right-panel" id="rightPanel">
+                <div class="sidebar-header">
+                    <button class="sidebar-back" id="backToSummary">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="sidebar-title">
+                        <span>CHECKOUT</span>
+                    </div>
+                </div>
+                
+                <div class="sidebar-content">
+                    <h3 class="checkout-subtitle">Help us further</h3>
+                    
+                    <div class="checkout-options">
+                        <label class="checkout-option">
+                            <input type="radio" name="additional" value="olive-tree">
+                            <div class="option-content">
+                                <div class="option-header">
+                                    <span class="option-label">PLANT AN OLIVE TREE IN PALESTINE</span>
+                                    <span class="option-price">£10.00</span>
+                                </div>
+                                <div class="option-title">OLIVE TREE</div>
+                            </div>
+                        </label>
+                        
+                        <label class="checkout-option">
+                            <input type="radio" name="additional" value="quran-pen">
+                            <div class="option-content">
+                                <div class="option-header">
+                                    <span class="option-label">EYE PROJECT</span>
+                                    <span class="option-price">£25.00</span>
+                                </div>
+                                <div class="option-title">QUR'AN READING PEN</div>
+                            </div>
+                        </label>
+                        
+                        <label class="checkout-option">
+                            <input type="radio" name="additional" value="admin-fee">
+                            <div class="option-content">
+                                <div class="option-header">
+                                    <span class="option-label">ADMINISTRATION</span>
+                                    <span class="option-price">£1.00</span>
+                                </div>
+                                <div class="option-title">ADMINISTRATION FEE</div>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="checkout-total">
+                        <h3 class="total-label">TOTAL</h3>
+                        <div class="total-amount-large">£360.00</div>
+                    </div>
+                    
+                    <button class="btn-complete-donation">COMPLETE DONATION <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Zakat Policy Section -->
     <section class="zakat-policy-section">
@@ -716,8 +862,8 @@
                         <p class="connect-text">Connect</p>
                     </div>
                     <div class="footer-logos">
-                        <img src="https://via.placeholder.com/80x40/666/FFF?text=Logo1" alt="Certification">
-                        <img src="https://via.placeholder.com/80x40/666/FFF?text=Logo2" alt="Certification">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=80&h=40&fit=crop&crop=center" alt="Certification">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=80&h=40&fit=crop&crop=center" alt="Certification">
                     </div>
                 </div>
                 <div class="copyright-row">
@@ -734,7 +880,85 @@
         </div>
     </footer>
 
-    <script src="slider.js"></script>
     <script src="navbar-scroll.js"></script>
+    <script>
+        // Simple search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-input');
+            const searchContainer = document.querySelector('.navbar-search');
+            const searchOverlay = document.querySelector('.search-overlay');
+            const searchClose = document.querySelector('.search-close');
+            const searchNavIcon = document.querySelector('.search-nav-icon');
+            
+            if (searchInput && searchContainer) {
+                function openSearch() {
+                    searchContainer.classList.add('active');
+                    if (searchOverlay) searchOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+                
+                function closeSearch() {
+                    searchContainer.classList.remove('active');
+                    if (searchOverlay) searchOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+                
+                if (searchNavIcon) searchNavIcon.addEventListener('click', openSearch);
+                searchInput.addEventListener('focus', openSearch);
+                searchInput.addEventListener('click', openSearch);
+                if (searchClose) searchClose.addEventListener('click', closeSearch);
+                if (searchOverlay) searchOverlay.addEventListener('click', closeSearch);
+                
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') closeSearch();
+                });
+            }
+            
+            // Donation Sidebar functionality
+            const donationSidebar = document.getElementById('donationSidebar');
+            const donationOverlay = document.getElementById('donationOverlay');
+            const openDonationBtn = document.getElementById('openDonationSidebar');
+            const closeDonationBtn = document.getElementById('closeDonationSidebar');
+            
+            function openDonationSidebar() {
+                donationSidebar.classList.add('active');
+                donationOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            
+            function closeDonationSidebar() {
+                donationSidebar.classList.remove('active');
+                donationOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            if (openDonationBtn) {
+                openDonationBtn.addEventListener('click', openDonationSidebar);
+            }
+            
+            if (closeDonationBtn) {
+                closeDonationBtn.addEventListener('click', closeDonationSidebar);
+            }
+            
+            if (donationOverlay) {
+                donationOverlay.addEventListener('click', closeDonationSidebar);
+            }
+            
+            // Quantity controls
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('plus')) {
+                    const input = e.target.previousElementSibling;
+                    input.value = parseInt(input.value) + 1;
+                }
+                
+                if (e.target.classList.contains('minus')) {
+                    const input = e.target.nextElementSibling;
+                    if (parseInt(input.value) > 1) {
+                        input.value = parseInt(input.value) - 1;
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

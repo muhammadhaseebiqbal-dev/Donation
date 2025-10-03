@@ -1,24 +1,21 @@
 // Navbar scroll behavior
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar-header');
+    const body = document.body;
     let isScrolled = false;
-    let scrollTimeout;
 
     function handleScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const shouldBeScrolled = scrollTop > 200; // Trigger after 200px scroll
+        const navbarHeight = navbar.offsetHeight; // Get the full height of the expanded navbar
+        const shouldBeScrolled = scrollTop > navbarHeight; // Trigger after navbar height is scrolled
 
         if (shouldBeScrolled && !isScrolled) {
-            // Add delay before applying scrolled state
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                navbar.classList.add('scrolled');
-                isScrolled = true;
-            }, 200); // 200ms delay
+            navbar.classList.add('scrolled');
+            body.classList.add('scrolled');
+            isScrolled = true;
         } else if (!shouldBeScrolled && isScrolled) {
-            // Remove scrolled state immediately when back to top
-            clearTimeout(scrollTimeout);
             navbar.classList.remove('scrolled');
+            body.classList.remove('scrolled');
             isScrolled = false;
         }
     }
