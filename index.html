@@ -97,16 +97,38 @@
     <!-- Mobile Sidebar Overlay -->
     <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
 
-    <!-- Navbar Header -->
+    <!-- Mobile Navbar (Tablet & Phone Only) -->
+    <header class="mobile-navbar">
+        <!-- First Row: Green Background with Logo and Donate -->
+        <div class="mobile-navbar-top">
+            <a href="index.html" class="mobile-logo" title="Al Mustafa Welfare Trust">
+                <img src="./assests/ph-logo-mobile.png" alt="Al Mustafa Welfare Trust Logo">
+            </a>
+            <a href="#donate" class="mobile-donate-btn">DONATE</a>
+        </div>
+        
+        <!-- Second Row: Menu, Search, Cart Buttons -->
+        <div class="mobile-navbar-bottom">
+            <button class="mobile-nav-btn" id="hamburgerMenu" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+                <span>MENU</span>
+            </button>
+            
+            <button class="mobile-nav-btn" id="mobileSearchBtn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>SEARCH</span>
+            </button>
+            
+            <button class="mobile-nav-btn" id="mobileCartBtn" aria-label="Cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="mobile-cart-badge">1</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Desktop Navbar (Desktop Only) -->
     <header class="navbar-header">
         <div class="navbar-container">
-            <!-- Mobile Hamburger Menu -->
-            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Open Menu">
-                <i class="fas fa-bars"></i>
-                <span class="menu-text">MENU</span>
-            </button>
-
-            <!-- Logo Section -->
             <div class="navbar-logo">
                 <a href="index.html" title="Al Mustafa Welfare Trust">
                     <img src="./assests/al-mustafa-logo.svg" alt="Al Mustafa Welfare Trust Logo" 
@@ -115,17 +137,6 @@
                         AL MUSTAFA<br>WELFARE TRUST
                     </div>
                 </a>
-            </div>
-
-            <!-- Mobile Header Icons -->
-            <div class="mobile-header-icons">
-                <button class="mobile-icon-btn" id="mobileSearchBtn" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="mobile-icon-btn" id="mobileCartBtn" aria-label="Cart">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge">1</span>
-                </button>
             </div>
 
             <!-- Navigation Section -->
@@ -491,8 +502,8 @@
                 <div class="search-overlay"></div>
             </div>
 
-            <!-- Call to Action Section -->
-            <div class="navbar-cta">
+            <!-- Call to Action Section (Desktop) -->
+            <div class="navbar-cta navbar-cta-desktop">
                 <div class="cta-text">Call us for information</div>
                 <div class="cta-phone">0208 569 6444</div>
                 <a href="#donate" class="cta-button">DONATE NOW <i class="fas fa-arrow-right"></i></a>
@@ -502,33 +513,33 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-background">
-            <div class="hero-content-wrapper">
-                <div class="hero-text-content">
-                    <h1 class="hero-heading">
-                        <span class="hero-line1">TURNING COMPASSION</span>
-                        <span class="hero-line2">INTO <span class="arrow-icon">»</span> ACTION</span>
-                        <span class="hero-line3">WITH YOUR ZAKAT</span>
-                        <span class="hero-line4">FOR LASTING CHANGE</span>
-                    </h1>
-                    <button class="hero-donate-btn">DONATE NOW <i class="fas fa-arrow-right"></i></button>
+        <div class="hero-slideshow">
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="./assests/slideshow/image-child.jpg" alt="Children">
                 </div>
-                <div class="hero-image-content">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&h=600&fit=crop&crop=center" alt="Child with school supplies" class="hero-main-img">
+                <div class="slide">
+                    <img src="./assests/slideshow/image-girl.jpg" alt="Girl">
+                </div>
+                <div class="slide">
+                    <img src="./assests/slideshow/image-kid.jpg" alt="Kid">
                 </div>
             </div>
             
-            <!-- Navigation Circles -->
-            <div class="hero-dots">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot active"></span>
+            <!-- Navigation Dots -->
+            <div class="slideshow-dots">
+                <span class="slideshow-dot active" data-slide="0"></span>
+                <span class="slideshow-dot" data-slide="1"></span>
+                <span class="slideshow-dot" data-slide="2"></span>
             </div>
             
-            <!-- Scroll Icon -->
-            <div class="scroll-down">
-                <i class="fas fa-chevron-down"></i>
-            </div>
+            <!-- Navigation Arrows -->
+            <button class="slideshow-arrow prev" aria-label="Previous">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slideshow-arrow next" aria-label="Next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
     </section>
 
@@ -610,6 +621,59 @@
         </div>
     </section>
 
+    <!-- Floating Quick Donate Button (Bottom Center) -->
+    <button class="floating-donate-btn" id="floatingDonateBtn">
+        <i class="fas fa-heart"></i>
+        <span>QUICK DONATE</span>
+    </button>
+
+    <!-- Slide-up Donation Form -->
+    <div class="slide-up-overlay" id="slideUpOverlay"></div>
+    <div class="slide-up-form" id="slideUpForm">
+        <div class="slide-up-header">
+            <h3>Quick Donate</h3>
+            <button class="slide-up-close" id="slideUpClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="slide-up-content">
+            <!-- Amount Selection -->
+            <div class="slide-amounts">
+                <button class="slide-amount-btn active" data-amount="10">£10</button>
+                <button class="slide-amount-btn" data-amount="25">£25</button>
+                <button class="slide-amount-btn" data-amount="50">£50</button>
+                <button class="slide-amount-btn" data-amount="100">£100</button>
+            </div>
+            
+            <!-- Custom Amount -->
+            <div class="slide-custom-amount">
+                <label>Custom Amount</label>
+                <div class="slide-input-group">
+                    <span class="currency">£</span>
+                    <input type="number" placeholder="Enter amount" value="">
+                </div>
+            </div>
+            
+            <!-- Category -->
+            <div class="slide-category">
+                <label>Donation Category</label>
+                <select class="slide-select">
+                    <option>General Donation</option>
+                    <option>Water for Life</option>
+                    <option>Food Aid</option>
+                    <option>Education</option>
+                    <option>Emergency Relief</option>
+                </select>
+            </div>
+            
+            <!-- Donate Button -->
+            <button class="slide-donate-btn">
+                DONATE NOW <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- Donation Sidebar -->
     <div class="donation-sidebar-overlay" id="donationOverlay"></div>
     <div class="donation-sidebar" id="donationSidebar">
@@ -660,6 +724,9 @@
                         <button class="btn-checkout" id="btnCheckout">CHECKOUT <i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
+                
+                <!-- Watermark Logo -->
+                <img src="./assests/al-mustafa-logo-fixed.png" alt="Al Mustafa Trust" class="sidebar-watermark-logo">
             </div>
             
             <!-- Right Panel - Checkout Options -->
@@ -709,6 +776,9 @@
                     
                     <button class="btn-complete-donation" id="btnCompleteCheckout">COMPLETE DONATION <i class="fas fa-chevron-right"></i></button>
                 </div>
+                
+                <!-- Watermark Logo -->
+                <img src="./assests/al-mustafa-logo-fixed.png" alt="Al Mustafa Trust" class="sidebar-watermark-logo">
             </div>
             
             <!-- Third Panel - Final Checkout -->
@@ -739,6 +809,9 @@
                     
                     <button class="btn-complete-donation">PROCEED TO PAYMENT <i class="fas fa-chevron-right"></i></button>
                 </div>
+                
+                <!-- Watermark Logo -->
+                <img src="./assests/al-mustafa-logo-fixed.png" alt="Al Mustafa Trust" class="sidebar-watermark-logo">
             </div>
         </div>
     </div>
@@ -765,7 +838,7 @@
                 <div class="donation-cards-container">
                     <div class="donation-card teal-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=200&fit=crop&crop=center" alt="Sponsor a Hafiz">
+                            <img src="./assests/cards/image01.jpg" alt="Sponsor a Hafiz">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">SPONSOR A HAFIZ</h3>
@@ -778,7 +851,7 @@
 
                     <div class="donation-card pink-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=300&h=200&fit=crop&crop=center" alt="Orphan Sponsorship">
+                            <img src="./assests/cards/image02.jpg" alt="Orphan Sponsorship">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">ORPHAN<br>SPONSORSHIP</h3>
@@ -791,7 +864,7 @@
 
                     <div class="donation-card teal-dark-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center" alt="Al Aqsa Project">
+                            <img src="./assests/cards/image03.jpg" alt="Al Aqsa Project">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">AL AQSA PROJECT</h3>
@@ -804,7 +877,7 @@
 
                     <div class="donation-card red-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=200&fit=crop&crop=center" alt="Yemen Emergency">
+                            <img src="./assests/cards/image04.jpg" alt="Yemen Emergency">
                         </div>
                         <div class="card-content">
                             <h3 class="card-title">YEMEN EMERGENCY<br>APPEAL</h3>
@@ -1069,6 +1142,7 @@
     </footer>
 
     <script src="navbar-scroll.js"></script>
+    <script src="script.js"></script>
     <script>
         // Mobile Menu functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -1221,6 +1295,83 @@
                     }
                 });
             }
+        });
+        
+        // Floating Quick Donate Button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingBtn = document.getElementById('floatingDonateBtn');
+            const slideUpForm = document.getElementById('slideUpForm');
+            const slideUpOverlay = document.getElementById('slideUpOverlay');
+            const slideUpClose = document.getElementById('slideUpClose');
+            const slideDonateBtn = document.querySelector('.slide-donate-btn');
+            const mobileAddDonationBtn = document.querySelector('.mobile-add-donation-btn');
+            
+            // Get donation sidebar elements
+            const donationSidebar = document.getElementById('donationSidebar');
+            const donationOverlay = document.getElementById('donationOverlay');
+            
+            // Open donation sidebar function (reusable)
+            function openDonationSidebarMobile() {
+                if (donationSidebar && donationOverlay) {
+                    donationSidebar.classList.add('active');
+                    donationOverlay.classList.add('active');
+                    donationSidebar.classList.remove('show-checkout');
+                    donationSidebar.classList.remove('show-complete');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+            
+            // Open slide-up form (for floating button)
+            if (floatingBtn) {
+                floatingBtn.addEventListener('click', function() {
+                    slideUpForm.classList.add('active');
+                    slideUpOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            // Close slide-up form
+            function closeSlideUp() {
+                slideUpForm.classList.remove('active');
+                slideUpOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            if (slideUpClose) {
+                slideUpClose.addEventListener('click', closeSlideUp);
+            }
+            
+            if (slideUpOverlay) {
+                slideUpOverlay.addEventListener('click', closeSlideUp);
+            }
+            
+            // Slide-up form "DONATE NOW" button - opens donation sidebar
+            if (slideDonateBtn) {
+                slideDonateBtn.addEventListener('click', function() {
+                    // Close slide-up form first
+                    closeSlideUp();
+                    // Then open donation sidebar
+                    setTimeout(() => {
+                        openDonationSidebarMobile();
+                    }, 300);
+                });
+            }
+            
+            // Mobile quick donate "ADD DONATION" button - opens donation sidebar
+            if (mobileAddDonationBtn) {
+                mobileAddDonationBtn.addEventListener('click', function() {
+                    openDonationSidebarMobile();
+                });
+            }
+            
+            // Amount button selection
+            const slideAmountBtns = document.querySelectorAll('.slide-amount-btn');
+            slideAmountBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    slideAmountBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
         });
         
         // Simple search functionality

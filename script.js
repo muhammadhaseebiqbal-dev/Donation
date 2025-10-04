@@ -16,6 +16,7 @@ function initializeWebsite() {
     setupSmoothScrolling();
     setupFormValidation();
     setupAnimations();
+    initializeSlideshow();
 }
 
 // Mobile Menu Toggle
@@ -546,8 +547,6 @@ if (document.readyState === 'loading') {
 } else {
     initializeWebsite();
 }
-
-// Appeals page specific functionality
 function donateToAppeal(appealName, amount) {
     const donation = {
         id: Date.now(),
@@ -791,3 +790,76 @@ function handleApiError(error, retryFunction, maxRetries = 3) {
     
     retry();
 }
+
+// Hero Slideshow Functionality
+let currentSlideIndex = 0;
+let slideshowInterval;
+
+function initializeSlideshow() {
+    console.log('Initializing slideshow...');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slideshow-dot');
+    
+    console.log('Found slides:', slides.length);
+    console.log('Found dots:', dots.length);
+    
+    if (slides.length === 0) {
+        console.log('No slides found, exiting...');
+        return;
+    }
+    
+    // Show first slide
+    showSlide(currentSlideIndex);
+    console.log('Starting slideshow with 6 second interval...');
+    
+    // Auto-advance slides every 6 seconds
+    startSlideshow();
+}
+
+function showSlide(index) {
+    console.log('Showing slide:', index);
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slideshow-dot');
+    
+    if (slides.length === 0) return;
+    
+    // Remove active class from all slides and dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Add active class to current slide and dot
+    if (slides[index]) {
+        slides[index].classList.add('active');
+        console.log('Activated slide:', index);
+    }
+    if (dots[index]) {
+        dots[index].classList.add('active');
+    }
+}
+
+function nextSlide() {
+    const slides = document.querySelectorAll('.slide');
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    console.log('Moving to next slide. New index:', currentSlideIndex, 'at', new Date().toLocaleTimeString());
+    showSlide(currentSlideIndex);
+}
+
+function previousSlide() {
+    const slides = document.querySelectorAll('.slide');
+    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    showSlide(currentSlideIndex);
+}
+
+function startSlideshow() {
+    console.log('Starting slideshow interval (6 seconds)...');
+    slideshowInterval = setInterval(() => {
+        console.log('Interval fired at:', new Date().toLocaleTimeString());
+        nextSlide();
+    }, 6000); // Change slide every 6 seconds
+}
+
+function stopSlideshow() {
+    clearInterval(slideshowInterval);
+}
+
+// Appeals page specific functionality
