@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al Mustafa Welfare Trust | A Muslim Charity Changing Lives</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
@@ -14,9 +15,13 @@
     <!-- Mobile Sidebar Menu -->
     <div class="mobile-sidebar" id="mobileSidebar">
         <div class="mobile-sidebar-header">
-            <button class="close-sidebar" id="closeSidebar" aria-label="Close Menu">
+            <button class="mobile-header-btn" id="closeSidebar" aria-label="Close Menu">
                 <i class="fas fa-times"></i>
                 <span>CLOSE</span>
+            </button>
+            <button class="mobile-header-btn" id="menuToSearchBtn" aria-label="Open Search">
+                <i class="fa fa-search"></i>
+                <span>SEARCH</span>
             </button>
         </div>
         <div class="mobile-sidebar-content">
@@ -97,6 +102,67 @@
     <!-- Mobile Sidebar Overlay -->
     <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
 
+    <!-- Mobile Search Sidebar -->
+    <div class="mobile-search-sidebar" id="mobileSearchSidebar">
+        <div class="mobile-search-header">
+            <button class="mobile-header-btn" id="closeSearchBtn" aria-label="Close Search">
+                <i class="fas fa-times"></i>
+                <span>CLOSE</span>
+            </button>
+            <button class="mobile-header-btn" id="searchToMenuBtn" aria-label="Open Menu">
+                <i class="fa-solid fa-bars"></i>
+                <span>MENU</span>
+            </button>
+        </div>
+        <div class="mobile-search-content">
+            <div class="mobile-search-input-wrapper">
+                <input type="text" class="mobile-search-input" placeholder="SEARCH" aria-label="Search">
+                <button class="mobile-search-submit" aria-label="Submit Search">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Popular Projects -->
+            <div class="mobile-search-section">
+                <h3 class="mobile-search-section-title">POPULAR PROJECTS</h3>
+                <div class="mobile-search-list">
+                    <a href="#" class="mobile-search-item">
+                        <span class="mobile-search-item-text">CATARACT CHARITY APPEAL</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="mobile-search-item">
+                        <span class="mobile-search-item-text">ORPHAN SPONSORSHIP</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="mobile-search-item">
+                        <span class="mobile-search-item-text">SPONSOR A HAFIZ</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="mobile-search-item">
+                        <span class="mobile-search-item-text">WATER FOR LIFE</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Popular Donations -->
+            <div class="mobile-search-section">
+                <h3 class="mobile-search-section-title">POPULAR DONATIONS</h3>
+                <div class="mobile-search-donation-card">
+                    <h4 class="mobile-donation-title">QUR'AN READING PEN</h4>
+                    <p class="mobile-donation-description">For £25.00 you can help the blind read the Qur'an</p>
+                    <button class="mobile-donation-btn">
+                        DONATE <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="mobile-donation-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Mobile Navbar (Tablet & Phone Only) -->
     <header class="mobile-navbar">
         <!-- First Row: Green Background with Logo and Donate -->
@@ -110,17 +176,17 @@
         <!-- Second Row: Menu, Search, Cart Buttons -->
         <div class="mobile-navbar-bottom">
             <button class="mobile-nav-btn" id="hamburgerMenu" aria-label="Open Menu">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa fa-bars"></i>
                 <span>MENU</span>
             </button>
             
             <button class="mobile-nav-btn" id="mobileSearchBtn" aria-label="Search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa fa-search"></i>
                 <span>SEARCH</span>
             </button>
             
             <button class="mobile-nav-btn" id="mobileCartBtn" aria-label="Cart">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa fa-shopping-cart"></i>
                 <span class="mobile-cart-badge">1</span>
             </button>
         </div>
@@ -1149,17 +1215,27 @@
             const mobileSidebar = document.getElementById('mobileSidebar');
             const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
             const closeSidebar = document.getElementById('closeSidebar');
+            const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+            const mobileSearchSidebar = document.getElementById('mobileSearchSidebar');
+            const closeSearchBtn = document.getElementById('closeSearchBtn');
+            const searchToMenuBtn = document.getElementById('searchToMenuBtn');
+            const menuToSearchBtn = document.getElementById('menuToSearchBtn');
             
             console.log('Hamburger menu:', hamburgerMenu);
             console.log('Mobile sidebar:', mobileSidebar);
             console.log('Mobile overlay:', mobileSidebarOverlay);
             console.log('Close sidebar:', closeSidebar);
+            console.log('Mobile search button:', mobileSearchBtn);
+            console.log('Mobile search sidebar:', mobileSearchSidebar);
             
             function openMobileSidebar() {
                 console.log('Opening mobile sidebar...');
                 if (mobileSidebar) {
                     mobileSidebar.classList.add('open');
                     console.log('Added open class to sidebar');
+                }
+                if (mobileSearchSidebar) {
+                    mobileSearchSidebar.classList.remove('open');
                 }
                 if (mobileSidebarOverlay) {
                     mobileSidebarOverlay.classList.add('active');
@@ -1178,6 +1254,53 @@
                 }
                 document.body.style.overflow = '';
             }
+
+            function openMobileSearch() {
+                console.log('Opening mobile search...');
+                if (mobileSearchSidebar) {
+                    mobileSearchSidebar.classList.add('open');
+                    console.log('Added open class to search sidebar');
+                }
+                if (mobileSidebar) {
+                    mobileSidebar.classList.remove('open');
+                }
+                if (mobileSidebarOverlay) {
+                    mobileSidebarOverlay.classList.add('active');
+                    console.log('Added active class to overlay');
+                }
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileSearch() {
+                console.log('Closing mobile search...');
+                if (mobileSearchSidebar) {
+                    mobileSearchSidebar.classList.remove('open');
+                }
+                if (mobileSidebarOverlay) {
+                    mobileSidebarOverlay.classList.remove('active');
+                }
+                document.body.style.overflow = '';
+            }
+
+            function switchToMenu() {
+                console.log('Switching from search to menu...');
+                if (mobileSearchSidebar) {
+                    mobileSearchSidebar.classList.remove('open');
+                }
+                setTimeout(function() {
+                    openMobileSidebar();
+                }, 300);
+            }
+
+            function switchToSearch() {
+                console.log('Switching from menu to search...');
+                if (mobileSidebar) {
+                    mobileSidebar.classList.remove('open');
+                }
+                setTimeout(function() {
+                    openMobileSearch();
+                }, 300);
+            }
             
             if (hamburgerMenu) {
                 console.log('Adding click listener to hamburger menu');
@@ -1195,11 +1318,45 @@
                     closeMobileSidebar();
                 });
             }
+
+            if (mobileSearchBtn) {
+                console.log('Adding click listener to search button');
+                mobileSearchBtn.addEventListener('click', function(e) {
+                    console.log('Search button clicked!');
+                    e.preventDefault();
+                    openMobileSearch();
+                });
+            }
+
+            if (closeSearchBtn) {
+                closeSearchBtn.addEventListener('click', function(e) {
+                    console.log('Close search button clicked!');
+                    e.preventDefault();
+                    closeMobileSearch();
+                });
+            }
+
+            if (searchToMenuBtn) {
+                searchToMenuBtn.addEventListener('click', function(e) {
+                    console.log('Switch to menu button clicked!');
+                    e.preventDefault();
+                    switchToMenu();
+                });
+            }
+
+            if (menuToSearchBtn) {
+                menuToSearchBtn.addEventListener('click', function(e) {
+                    console.log('Switch to search button clicked!');
+                    e.preventDefault();
+                    switchToSearch();
+                });
+            }
             
             if (mobileSidebarOverlay) {
                 mobileSidebarOverlay.addEventListener('click', function(e) {
                     console.log('Overlay clicked!');
                     closeMobileSidebar();
+                    closeMobileSearch();
                 });
             }
             

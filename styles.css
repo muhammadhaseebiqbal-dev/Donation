@@ -295,34 +295,84 @@ h1 {
 }
 
 .mobile-sidebar-header {
-    background: #009b83;
-    padding: 20px;
+    background: white;
+    padding: 0;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.close-sidebar {
+.mobile-header-btn {
+    flex: 1;
     background: none;
     border: none;
-    color: white;
+    border-right: 1px solid #e0e0e0;
+    color: #333;
     font-family: 'Oswald', sans-serif;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    padding: 8px;
+    padding: 20px;
+    transition: background 0.2s;
+}
+
+.mobile-header-btn:last-child {
+    border-right: none;
+}
+
+.mobile-header-btn:hover {
+    background: #f8f8f8;
+}
+
+.mobile-header-btn:first-child {
+    color: #009b83;
+}
+
+.mobile-header-btn i {
+    font-size: 20px;
+}
+
+.mobile-header-btn span {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+}
+
+.close-sidebar {
+    flex: 1;
+    background: none;
+    border: none;
+    border-right: 1px solid #e0e0e0;
+    color: #009b83;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    transition: background 0.2s;
+}
+
+.close-sidebar:hover {
+    background: #f8f8f8;
 }
 
 .close-sidebar i {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .close-sidebar span {
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-size: 12px;
 }
 
 .mobile-sidebar-content {
@@ -454,6 +504,240 @@ h1 {
     border: none;
     cursor: pointer;
     transition: background 0.3s;
+}
+
+/* Mobile Search Sidebar */
+.mobile-search-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100dvh;
+    background: white;
+    z-index: 10004;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-search-sidebar.open {
+    right: 0;
+}
+
+.mobile-search-header {
+    background: white;
+    padding: 0;
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-header-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    border-right: 1px solid #e0e0e0;
+    color: #333;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    transition: background 0.2s;
+}
+
+.mobile-header-btn:last-child {
+    border-right: none;
+}
+
+.mobile-header-btn:hover {
+    background: #f8f8f8;
+}
+
+.mobile-header-btn:first-child {
+    color: #009b83;
+}
+
+.mobile-header-btn i {
+    font-size: 20px;
+}
+
+.mobile-header-btn span {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+}
+
+.mobile-search-content {
+    padding: 20px;
+}
+
+.mobile-search-input-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.mobile-search-input {
+    width: 100%;
+    padding: 15px 50px 15px 15px;
+    border: 2px solid #e0e0e0;
+    border-bottom: 3px solid #009b83;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.mobile-search-input:focus {
+    border-bottom-color: #007a65;
+}
+
+.mobile-search-input::placeholder {
+    color: #999;
+}
+
+.mobile-search-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background: #009b83;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.mobile-search-submit:hover {
+    background: #007a65;
+}
+
+.mobile-search-submit i {
+    font-size: 18px;
+}
+
+.mobile-search-section {
+    margin-bottom: 30px;
+}
+
+.mobile-search-section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.mobile-search-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-search-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    color: #009b83;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: color 0.2s;
+}
+
+.mobile-search-item:hover {
+    color: #007a65;
+}
+
+.mobile-search-item i {
+    font-size: 12px;
+}
+
+.mobile-search-donation-card {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 0;
+    border-left: 4px solid #009b83;
+}
+
+.mobile-donation-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #009b83;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.mobile-donation-description {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.mobile-donation-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: #009b83;
+    color: white;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.3s;
+    margin-bottom: 15px;
+}
+
+.mobile-donation-btn:hover {
+    background: #007a65;
+}
+
+.mobile-donation-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.mobile-donation-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d0d0d0;
+    transition: background 0.3s;
+}
+
+.mobile-donation-dots .dot.active {
+    background: #009b83;
 }
 
 .mobile-sidebar-donate-btn:hover {
